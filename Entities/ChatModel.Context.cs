@@ -13,11 +13,10 @@ namespace Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-
     public partial class ChatDBEntities : DbContext
     {
         public ChatDBEntities()
-            : base("ChatDBEntities")
+            : base("name=ChatDBEntities")
         {
         }
     

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data;
 using Entities;
 
 namespace BussinesClass
 {
+    /// <summary>
+    /// Class to manage the Messages entity 
+    /// </summary>
+    /// <returns></returns>
     public class MessagesBusiness
     {
         private MessageDataClass messageManager = null;

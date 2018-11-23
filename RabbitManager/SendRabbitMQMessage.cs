@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System.Configuration;
 using System.Threading;
-using System.IO;
+using Newtonsoft.Json;
 
 namespace RabbitManager
 {
@@ -40,18 +36,18 @@ namespace RabbitManager
         {
             try
             {
-                string botResponse = string.Empty;
+                RabbitMessage botResponse = new RabbitMessage();
                 string IdMessage = Guid.NewGuid().ToString();
-                Send(message, IdMessage);
+                Send(message, IdMessage,queueBot);
                 int count = 0;
-                while (string.IsNullOrEmpty(botResponse) && count < 10)
+                while (string.IsNullOrEmpty(botResponse.Message) && count < 20)
                 {
+                    Thread.Sleep(1000);
                     botResponse = Recieve(IdMessage);
-                    Thread.Sleep(400);
                     count++;
                 }
                 
-                return botResponse;
+                return botResponse.Message;
             }
             catch (Exception e)
             {
@@ -64,25 +60,22 @@ namespace RabbitManager
         ///  set a  message throw queue in rabbitMQ
         /// </summary>
         /// <param name="message">message to send</param>
-        /// <param name="IdMessage">IdMensaje to mark the result</param>
+        /// <param name="idMessage">IdMensaje to mark the result</param>
         /// <returns></returns>
-        public void Send(string message, string IdMessage="")
+        public void Send(string message, string idMessage, string destinyQueue)
         {
             try
             {
-                if(IdMessage == "")
-                {
-                    IdMessage = Guid.NewGuid().ToString();
-                }
-                
                 string result = string.Empty;
-                string jsonMessage = "{\"IdMessage\":\"" + IdMessage + "\",\"Message\": \""+message+"\"}";
+                RabbitMessage messageToSend = new RabbitMessage(idMessage, message);
+
+                string jsonMessage = JsonConvert.SerializeObject(messageToSend);
 
                 var factory = new ConnectionFactory() { HostName = hostName };
                 using (var connection = factory.CreateConnection())
                 using (var channel = connection.CreateModel())
                 {
-                    channel.QueueDeclare(queue: queueBot,
+                    channel.QueueDeclare(queue: destinyQueue,
                                          durable: false,
                                          exclusive: false,
                                          autoDelete: false,
@@ -91,7 +84,7 @@ namespace RabbitManager
                     var body = Encoding.UTF8.GetBytes(jsonMessage);
 
                     channel.BasicPublish(exchange: "",
-                                            routingKey: queueBot,
+                                            routingKey: destinyQueue,
                                             basicProperties: null,
                                             body: body);
 
@@ -110,8 +103,9 @@ namespace RabbitManager
         /// </summary>
         /// <param name="IdMessage">to build the response queue IdMensaje:bot</param>
         /// <returns></returns>
-        public string Recieve(string IdMessage)
+        public RabbitMessage Recieve(string IdMessage)
         {
+            RabbitMessage rabbitMessage = new RabbitMessage();
             string botQueue = IdMessage + ":" + queueBot;
             string data = string.Empty;
             {
@@ -125,12 +119,13 @@ namespace RabbitManager
                         if (result != null)
                         {
                             data = Encoding.UTF8.GetString(result.Body);
-          
+                            rabbitMessage = JsonConvert.DeserializeObject<RabbitMessage>(data);
+
                         }
                     }
                 }
             }
-            return data;
+            return rabbitMessage;
         
         }
 

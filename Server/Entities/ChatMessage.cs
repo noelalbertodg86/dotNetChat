@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Server
+﻿namespace Server
 {
     /// <summary>
     /// Model the data of input json  message  from a user 

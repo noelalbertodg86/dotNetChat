@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
 using System.Diagnostics;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
-using RabbitMQ.Client;
+using RabbitManager;
+
 namespace bot
 {
     /// <summary>
@@ -19,6 +17,7 @@ namespace bot
         private readonly string apiUrl = ConfigurationManager.AppSettings["url"].ToString();
         private readonly string returnMessage = ConfigurationManager.AppSettings["returnMessage"].ToString();
         private static BotProcess botInstance = null;
+        private RabbitManager.SendRabbitMQMessage rabbitManager = new SendRabbitMQMessage();
 
         /// <summary>
         /// The class is Singleton 
@@ -190,27 +189,11 @@ namespace bot
             string[] queueList = { IdMessage, ConfigurationManager.AppSettings["queue"].ToString() };
 
             string botQueue = string.Join(":", queueList);
+            rabbitManager.Send(OutputMessage, IdMessage, botQueue);
 
-            var factory = new ConnectionFactory() { HostName = hostName };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                channel.QueueDeclare(queue: botQueue,
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
-
-                var body = Encoding.UTF8.GetBytes(OutputMessage);
-
-                channel.BasicPublish(exchange: "",
-                                        routingKey: botQueue,
-                                        basicProperties: null,
-                                        body: body);
-
-                Console.WriteLine(" [x] Queue [{0}] Sent {1}", botQueue, OutputMessage);
+           Console.WriteLine(" [x] Queue [{0}] Sent {1}", botQueue, OutputMessage);
                 
-            }
+            
         }
     }
 }

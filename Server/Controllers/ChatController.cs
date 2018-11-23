@@ -1,24 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using BussinesClass;
 using Entities;
-using System.Diagnostics;
 using RabbitManager;
 using Encrypt;
-using Microsoft.Extensions.Configuration;
-using System.IO;
+using Newtonsoft.Json;
 
 namespace Server.Controllers
 {
-    
+
     public class ChatController : Controller
     {
         private IHubContext<ChatHub> _hubContext;
@@ -51,8 +43,10 @@ namespace Server.Controllers
         [Route("api/chat/login")]
         public string Login([FromBody]UserCredential userLoginData)
         {
+            ResponseMessage responseMessage = new ResponseMessage();
             try
             {
+                //the password is encrypted for  security
                 userLoginData.password = encrypt.EncryptTextBase64(userLoginData.password);
                 Entities.User loginUser = user.Login(userLoginData.user, userLoginData.password);
                 if (User != null)
@@ -63,19 +57,26 @@ namespace Server.Controllers
                            _hubContext.Clients.Client(chatHub.getConnectionId()).SendAsync("broadcastMessage", m.OriginUserID, m.MessageText);
 
                     }
-                    _hubContext.Clients.AllExcept(chatHub.getConnectionId()).SendAsync("recieveMessage", $"Welcome to chat {userLoginData.user} {userLoginData.password}");
+                    _hubContext.Clients.AllExcept(chatHub.getConnectionId()).SendAsync("recieveMessage", $"Welcome to chat {userLoginData.user}");
 
-                    return "{\"Codigo\":\"OK\", \"MensajeRetorno\": \"User login successfully\"}";
+                    responseMessage.Codigo = "OK";
+                    responseMessage.MensajeRetorno = "Login successfully";
+                    return JsonConvert.SerializeObject(responseMessage);
+
                 }
                 else
                 {
-                    return "{\"Codigo\":\"OK\", \"MensajeRetorno\": \"User or password incorrect\"}";
+                    responseMessage.Codigo = "Error";
+                    responseMessage.MensajeRetorno = "User or password incorrect";
+                    return JsonConvert.SerializeObject(responseMessage);
                 }
             }
             catch (Exception e)
             {
                 string error = e.Message;
-                return "{\"Codigo\":\"OK\", \"MensajeRetorno\": "+ error+ "\"}";
+                responseMessage.Codigo = "Error";
+                responseMessage.MensajeRetorno = error;
+                return JsonConvert.SerializeObject(responseMessage);
             }
 
             
@@ -127,6 +128,7 @@ namespace Server.Controllers
         [Route("api/chat/createuser")]
         public string CreateUser([FromBody]Entities.User newUser)
         {
+            ResponseMessage responseMessage = new ResponseMessage();
             try
             {
                 newUser.Password = encrypt.EncryptTextBase64(newUser.Password);
@@ -135,18 +137,24 @@ namespace Server.Controllers
 
                 if (newUserResult)
                 {
-                    return "{\"Codigo\":\"OK\", \"MensajeRetorno\": \"User created successfully\"}";
+                    responseMessage.Codigo = "OK";
+                    responseMessage.MensajeRetorno = "User created successfully";
+                    return JsonConvert.SerializeObject(responseMessage);
                 }
                 else
                 {
-                    return "{\"Codigo\":\"Error\", \"MensajeRetorno\": \"Already exist a user with the same username\"}";
+                    responseMessage.Codigo = "Error";
+                    responseMessage.MensajeRetorno = "Sorry username is already taken";
+                    return JsonConvert.SerializeObject(responseMessage);
                 }
 
             }
             catch (Exception e)
             {
                 string error = e.Message;
-                return "{\"Codigo\":\"Error\", \"MensajeRetorno\": \"{0}\"}";
+                responseMessage.Codigo = "Error";
+                responseMessage.MensajeRetorno = error;
+                return JsonConvert.SerializeObject(responseMessage);
             }
 
 

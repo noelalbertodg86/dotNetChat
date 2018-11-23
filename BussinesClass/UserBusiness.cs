@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data;
 using Entities;
 
 namespace BussinesClass
 {
+    /// <summary>
+    /// Class to manage the User entity and db table
+    /// </summary>
+    /// <returns></returns>
     public class UserBusiness
     {
         private UserDataClass userManager = null;
@@ -19,7 +19,7 @@ namespace BussinesClass
         public User Login(string userName, string password)
         {
             return userManager.GetUser(user: userName, password: password);
-            //todo agregar inicio de seccion en la tabla user seccion
+
         }
 
         public bool CreateNewUser(string name, string lastName, DateTime birthDay, string email, string userName, string password, string department)

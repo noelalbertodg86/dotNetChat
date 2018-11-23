@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Data;
 using Entities;
 
 namespace BussinesClass
 {
+    /// <summary>
+    /// Class to manage the ChatRoom entity and db table
+    /// </summary>
+    /// <returns></returns>
     public class ChatRoomBusiness
     {
         ChatRoomDataClass chatRoomManager = null;

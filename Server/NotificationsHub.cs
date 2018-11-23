@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.SignalR;
+using System.Threading.Tasks;
 
 namespace Server
 {
@@ -26,5 +27,17 @@ namespace Server
         {
             return Context.ConnectionId;
         }
+
+        public override Task OnDisconnectedAsync(System.Exception exception)
+        {
+            Clients.All.SendAsync("broadcastMessage", "system", $"{Context.ConnectionId} left the conversation");
+            return base.OnDisconnectedAsync(exception);
+        }
+
+        //public override Task OnConnectedAsync()
+        //{
+        //    Clients.All.SendAsync("broadcastMessage", "system", $"{Context.ConnectionId} joined the conversation");
+        //    return base.OnConnectedAsync();
+        //}
     }
 }
