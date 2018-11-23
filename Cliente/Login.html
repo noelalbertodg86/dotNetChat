@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login para 1 usuario</title>
+</head>
+
+<body>
+    <SCRIPT language=JavaScript>
+        function go() {
+            if (document.form.password.value == 'CONTRASEÑA' && document.form.login.value == 'USUARIO') {
+                document.form.submit();
+            }
+            else {
+                alert("Porfavor ingrese, nombre de usuario y contraseña correctos.");
+            }
+        }
+    </SCRIPT>
+
+    <table width="280" cellspacing="1" cellpadding="3" border="0" bgcolor="#1E679A">
+        <tr>
+            <td>
+                <font color="#FFFFFF" face="arial, verdana, helvetica">
+                    <b>Welcome to Financial Chat</b>
+                </font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#ffffff">
+                <font face="arial, verdana, helvetica">
+                    <FORM name= form action="TU_PAGINA_WEB.HTML">
+
+                        <P>User:    <INPUT type=text name=login>
+                        <P>Pass:    <INPUT type=password name=password>
+                        <P><INPUT onclick=go() type=button value=Acceder>
+
+                    </FORM>
+                </font>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

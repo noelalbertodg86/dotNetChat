@@ -1,0 +1,12 @@
+C:\dotNetFinancialChat\RabbitManager\bin\Debug\RabbitManager.dll.config
+C:\dotNetFinancialChat\RabbitManager\bin\Debug\RabbitManager.dll
+C:\dotNetFinancialChat\RabbitManager\bin\Debug\RabbitManager.pdb
+C:\dotNetFinancialChat\RabbitManager\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\dotNetFinancialChat\RabbitManager\bin\Debug\RabbitMQ.Client.dll
+C:\dotNetFinancialChat\RabbitManager\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\dotNetFinancialChat\RabbitManager\bin\Debug\RabbitMQ.Client.xml
+C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.csproj.CopyComplete
+C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.dll
+C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.pdb
+C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.csprojAssemblyReference.cache

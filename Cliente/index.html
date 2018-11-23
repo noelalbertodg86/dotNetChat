@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Financial Chat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container" id="loginDiv">
+        <div class="row">
+            <form name="loginForm" id="loginForm">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">User</label>
+                    <input type="text" class="form-control" id="user" name="user" aria-describedby="user" placeholder="User">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="aliveCheck">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="button" id="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    <br />
+
+    <div class="container" >
+        <ul id="welcome" ></ul>
+    </div>
+    <br />
+        <div class="container" id="chat" style="display:none">
+            <div>
+                <form name="chatForm" id="chatForm">
+                    <div class="form-group">
+                        <label for="sendMessage">Message to Send:</label>
+                        <input type="text" width="500" class="form-control" id="messagetext" name="messagetext" aria-describedby="message" placeholder="Write your message">
+                    </div>
+                    <br />
+                    <button type="button" id="send" class="btn btn-primary">Send</button>
+
+                </form>
+                <br />
+                <table width="500" border="1" cellpadding="1" cellspacing="1">
+                    <tr>
+                        <td scope="row" bgcolor="#b3b3ff">
+                            Message List
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="container">
+                                <ul id="discussion"></ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@aspnet/signalr@1.0.0-rc1-update1/dist/browser/signalr.min.js"></script>
+        <script type="text/javascript">
+            //establish conection with signalr hub
+            var connection = new signalR.HubConnectionBuilder()
+                .withUrl("/notifications")
+                .build();
+
+            //get button login properties
+            var submit = document.getElementById("submit");
+
+
+            ///recieve message from signalr hub
+            connection.on('recieveMessage', (value) => {
+                var liElement = document.createElement('li');
+                liElement.innerHTML = value;
+                document.getElementById('discussion').appendChild(liElement);
+            });
+
+            connection.on('broadcastMessage', (name, message) => {
+                var liElement = document.createElement('li');
+                liElement.innerHTML = '<strong>' + name + '</strong>:&nbsp;&nbsp;' + message;
+                document.getElementById('discussion').appendChild(liElement);
+            });
+
+            //sendbutton.addEventListener("click", event => {
+            //    connection.invoke('send', user, document.getElementById('messagetext').value);
+            //    //messageInput.value = '';
+            //    //messageInput.focus();
+            //});
+
+            //send to web api post login a request
+            submit.addEventListener("click", event => {
+                fetch("http://localhost:57614/api/chat/login", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        user: document.getElementById('user').value,
+                        password: document.getElementById('password').value,
+                        keepSectionAlive: document.getElementById('aliveCheck').value
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => {
+                    return response.json();
+                }).then(data => {
+                    // Work with JSON data here
+                    //console.log(data);
+                    alert(data.MensajeRetorno)
+                    if (data.Codigo == 'OK') {
+                        //if login is ok take some action
+                        document.getElementById('loginDiv').hidden = 'hidden';
+                        document.getElementById('chat').style.display = 'block';
+
+                        var liWelcomeElement = document.createElement('li');
+                        liWelcomeElement.innerHTML = '<strong>' + document.getElementById('user').value+ ": WELCOME TO FINANCIAL CHAT" + '</strong>';
+                        document.getElementById('welcome').appendChild(liWelcomeElement);
+                        //window.open('chat.html')
+                    }
+                }).catch(err => {
+                    alert.err.MensajeRetorno
+                });
+            });
+
+            //send to web api post message manager a request
+            var sendbutton = document.getElementById("send");
+            sendbutton.addEventListener("click", event => {
+                fetch("http://localhost:57614/api/chat/message", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        user: document.getElementById('user').value,
+                        message: document.getElementById('messagetext').value,
+                        chatroom: 1
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => {
+                    return response.json();
+                }).then(data => {
+                }).catch(err => {
+                    alert.err.MensajeRetorno
+                });
+            });
+
+
+
+            connection.start();
+        </script>
+        <br />
+
+
+</body>
+
+</html>
