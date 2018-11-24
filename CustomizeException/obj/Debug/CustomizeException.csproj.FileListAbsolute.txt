@@ -1,0 +1,5 @@
+C:\dotNetFinancialChat\CustomizeException\bin\Debug\CustomizeException.dll
+C:\dotNetFinancialChat\CustomizeException\bin\Debug\CustomizeException.pdb
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.dll
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.pdb

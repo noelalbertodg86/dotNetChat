@@ -4680,6 +4680,7 @@
       "BusinessClass/1.0.0": {
         "type": "project",
         "dependencies": {
+          "CustomizeException": "1.0.0",
           "Data": "1.0.0",
           "Entities": "1.0.0"
         },
@@ -4688,6 +4689,15 @@
         },
         "runtime": {
           "bin/placeholder/BusinessClass.dll": {}
+        }
+      },
+      "CustomizeException/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/CustomizeException.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomizeException.dll": {}
         }
       },
       "Data/1.0.0": {
@@ -12695,6 +12705,11 @@
       "path": "../BussinesClass/BusinessClass.csproj",
       "msbuildProject": "../BussinesClass/BusinessClass.csproj"
     },
+    "CustomizeException/1.0.0": {
+      "type": "project",
+      "path": "../CustomizeException/CustomizeException.csproj",
+      "msbuildProject": "../CustomizeException/CustomizeException.csproj"
+    },
     "Data/1.0.0": {
       "type": "project",
       "path": "../Data/Data.csproj",
@@ -12719,6 +12734,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "BusinessClass >= 1.0.0",
+      "CustomizeException >= 1.0.0",
       "Encrypt >= 1.0.0",
       "Entities >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
@@ -12765,6 +12781,9 @@
           "projectReferences": {
             "C:\\dotNetFinancialChat\\BussinesClass\\BusinessClass.csproj": {
               "projectPath": "C:\\dotNetFinancialChat\\BussinesClass\\BusinessClass.csproj"
+            },
+            "C:\\dotNetFinancialChat\\CustomizeException\\CustomizeException.csproj": {
+              "projectPath": "C:\\dotNetFinancialChat\\CustomizeException\\CustomizeException.csproj"
             },
             "C:\\dotNetFinancialChat\\Encrypt\\Encrypt.csproj": {
               "projectPath": "C:\\dotNetFinancialChat\\Encrypt\\Encrypt.csproj"

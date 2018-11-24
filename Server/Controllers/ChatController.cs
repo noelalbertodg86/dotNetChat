@@ -7,6 +7,7 @@ using Entities;
 using RabbitManager;
 using Encrypt;
 using Newtonsoft.Json;
+using CustomizeException;
 
 namespace Server.Controllers
 {
@@ -19,6 +20,7 @@ namespace Server.Controllers
         private SendRabbitMQMessage rabbitManager;
         private ChatHub chatHub;
         private Encrypt.EncryptManager encrypt;
+        private UserSessionBusiness userSessionManager;
     
 
 
@@ -30,6 +32,7 @@ namespace Server.Controllers
             rabbitManager = new SendRabbitMQMessage();
             chatHub = new ChatHub();
             encrypt = new EncryptManager();
+            userSessionManager = new UserSessionBusiness();
         }
 
 
@@ -38,7 +41,7 @@ namespace Server.Controllers
         /// of the current chatroom, also al connected user is notify  
         /// </summary>
         /// <param name="userLoginData"></param>
-        /// <returns></returns>
+        /// <returns>string json with result</returns>
         [HttpPost]
         [Route("api/chat/login")]
         public string Login([FromBody]UserCredential userLoginData)
@@ -48,28 +51,33 @@ namespace Server.Controllers
             {
                 //the password is encrypted for  security
                 userLoginData.password = encrypt.EncryptTextBase64(userLoginData.password);
+                //validate login credentials
                 Entities.User loginUser = user.Login(userLoginData.user, userLoginData.password);
-                if (User != null)
+                //save the user section
+                userSessionManager.SetLoginUserSession(loginUser.UserID, chatHub.getConnectionId());
+
+                //get the 50 or less last save message in the current chatroom
+                List<Message> last50Messages = messages.GetLast50ChatRoomMessages(userLoginData.chatRoomId);
+                foreach (Message m in last50Messages)
                 {
-                    List<Message> last50Messages = messages.GetLast50ChatRoomMessages(userLoginData.chatRoomId);
-                    foreach (Message m in last50Messages)
-                    {
-                           _hubContext.Clients.Client(chatHub.getConnectionId()).SendAsync("broadcastMessage", m.OriginUserID, m.MessageText);
-
-                    }
-                    _hubContext.Clients.AllExcept(chatHub.getConnectionId()).SendAsync("recieveMessage", $"Welcome to chat {userLoginData.user}");
-
-                    responseMessage.Codigo = "OK";
-                    responseMessage.MensajeRetorno = "Login successfully";
-                    return JsonConvert.SerializeObject(responseMessage);
+                    //broadcast the  obtained messages to the new conected user
+                    _hubContext.Clients.Client(chatHub.getConnectionId()).SendAsync("broadcastMessage", m.OriginUserID, m.MessageText);
 
                 }
-                else
-                {
-                    responseMessage.Codigo = "Error";
-                    responseMessage.MensajeRetorno = "User or password incorrect";
-                    return JsonConvert.SerializeObject(responseMessage);
-                }
+                // notify all connected users of the new user except the user who logged in
+                _hubContext.Clients.AllExcept(chatHub.getConnectionId()).SendAsync("recieveMessage", $"Welcome to chat {userLoginData.user}");
+
+                //build and return the ok response
+                responseMessage.Codigo = "OK";
+                responseMessage.MensajeRetorno = "Login successfully";
+                return JsonConvert.SerializeObject(responseMessage);
+            }
+            catch (UserOrPasswordIncorrectException e)
+            {
+                string error = e.Message;
+                responseMessage.Codigo = "Error";
+                responseMessage.MensajeRetorno = error;
+                return JsonConvert.SerializeObject(responseMessage);
             }
             catch (Exception e)
             {
@@ -109,7 +117,6 @@ namespace Server.Controllers
                 }
                 //broad cast the message to all conected users
                 _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
-
             }
             catch (Exception e)
             {
@@ -135,19 +142,17 @@ namespace Server.Controllers
                 bool newUserResult = user.CreateNewUser(newUser.Name, newUser.LastName, newUser.Birthday, newUser.Email,
                                                         newUser.UserName, newUser.Password, newUser.CompanyDepartment);
 
-                if (newUserResult)
-                {
-                    responseMessage.Codigo = "OK";
-                    responseMessage.MensajeRetorno = "User created successfully";
-                    return JsonConvert.SerializeObject(responseMessage);
-                }
-                else
-                {
-                    responseMessage.Codigo = "Error";
-                    responseMessage.MensajeRetorno = "Sorry username is already taken";
-                    return JsonConvert.SerializeObject(responseMessage);
-                }
+                responseMessage.Codigo = "OK";
+                responseMessage.MensajeRetorno = "User created successfully";
+                return JsonConvert.SerializeObject(responseMessage);
 
+            }
+            catch (UserTakenException e)
+            {
+                string error = e.Message;
+                responseMessage.Codigo = "Error";
+                responseMessage.MensajeRetorno = error;
+                return JsonConvert.SerializeObject(responseMessage);
             }
             catch (Exception e)
             {

@@ -18,6 +18,7 @@ namespace Entities
         public System.DateTime LoginDate { get; set; }
         public System.DateTime LogoutDate { get; set; }
         public int UserID { get; set; }
+        public string ConnectionId { get; set; }
     
         public virtual User User { get; set; }
     }

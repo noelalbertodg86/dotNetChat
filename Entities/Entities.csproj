@@ -106,6 +106,9 @@
     <Compile Include="User.cs">
       <DependentUpon>ChatModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserSectionView.cs">
+      <DependentUpon>ChatModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserSession.cs">
       <DependentUpon>ChatModel.tt</DependentUpon>
     </Compile>

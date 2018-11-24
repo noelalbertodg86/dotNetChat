@@ -82,7 +82,8 @@
     <Compile Include="ChatRoomDataClass.cs" />
     <Compile Include="MessageDataClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserSession.cs" />
+    <Compile Include="UserSectionViewDataClass.cs" />
+    <Compile Include="UserSessionDataClass.cs" />
     <Compile Include="UserDataClass.cs" />
   </ItemGroup>
   <ItemGroup>

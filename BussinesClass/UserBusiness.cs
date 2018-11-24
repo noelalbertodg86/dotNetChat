@@ -1,6 +1,7 @@
 ﻿using System;
 using Data;
 using Entities;
+using CustomizeException;
 
 namespace BussinesClass
 {
@@ -18,7 +19,12 @@ namespace BussinesClass
 
         public User Login(string userName, string password)
         {
-            return userManager.GetUser(user: userName, password: password);
+            User userLoginData = userManager.GetUser(user: userName, password: password);
+            if (userLoginData == null)
+            {
+                throw new UserOrPasswordIncorrectException();
+            }
+            return userLoginData;
 
         }
 
@@ -40,7 +46,7 @@ namespace BussinesClass
             }
             else
             {
-                return false;
+                throw new UserTakenException();
             }
 
         }

@@ -99,6 +99,10 @@
       <Project>{3d47d4a6-7dea-4ff7-a688-ffa150414ffe}</Project>
       <Name>BusinessClass</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DBTEMP\DBTEMP.csproj">
+      <Project>{e6ffc518-33c4-4c62-a4b9-44791819848d}</Project>
+      <Name>DBTEMP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{6e614241-9b72-47d3-bfad-c62d7920acbe}</Project>
       <Name>Entities</Name>

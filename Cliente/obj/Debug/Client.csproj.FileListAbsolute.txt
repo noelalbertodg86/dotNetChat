@@ -1,0 +1,14 @@
+C:\dotNetFinancialChat\Cliente\bin\Debug\Cliente.exe.config
+C:\dotNetFinancialChat\Cliente\bin\Debug\Cliente.exe
+C:\dotNetFinancialChat\Cliente\bin\Debug\Cliente.pdb
+C:\dotNetFinancialChat\Cliente\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\dotNetFinancialChat\Cliente\bin\Debug\System.Security.AccessControl.dll
+C:\dotNetFinancialChat\Cliente\bin\Debug\System.Security.Permissions.dll
+C:\dotNetFinancialChat\Cliente\bin\Debug\System.Security.Principal.Windows.dll
+C:\dotNetFinancialChat\Cliente\obj\Debug\Cliente.Form1.resources
+C:\dotNetFinancialChat\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\dotNetFinancialChat\Cliente\obj\Debug\Client.csproj.GenerateResource.cache
+C:\dotNetFinancialChat\Cliente\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat\Cliente\obj\Debug\Client.csproj.CopyComplete
+C:\dotNetFinancialChat\Cliente\obj\Debug\Cliente.exe
+C:\dotNetFinancialChat\Cliente\obj\Debug\Cliente.pdb

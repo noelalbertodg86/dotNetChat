@@ -42,13 +42,27 @@ advertencia 6002: La tabla o vista 'ChatDB.dbo.UserSessions' no tiene definida n
           <Key>
             <PropertyRef Name="UserSessionsID" />
             <PropertyRef Name="LoginDate" />
-            <PropertyRef Name="LogoutDate" />
             <PropertyRef Name="UserID" />
+            <PropertyRef Name="LogoutDate" />
           </Key>
           <Property Name="UserSessionsID" Type="int" Nullable="false" />
           <Property Name="LoginDate" Type="datetime" Nullable="false" />
           <Property Name="LogoutDate" Type="datetime" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ConnectionId" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ChatDB.dbo.UserSectionView' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="UserSectionView">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="Name" Type="nchar" MaxLength="150" Nullable="false" />
+          <Property Name="ConnectionId" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="nchar" MaxLength="250" Nullable="false" />
+          <Property Name="UserName" Type="nchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK_ChatRoom_Messages">
           <End Role="ChatRoom" Type="Self.ChatRoom" Multiplicity="0..1">
@@ -99,8 +113,17 @@ advertencia 6002: La tabla o vista 'ChatDB.dbo.UserSessions' no tiene definida n
 [UserSessions].[UserSessionsID] AS [UserSessionsID], 
 [UserSessions].[LoginDate] AS [LoginDate], 
 [UserSessions].[LogoutDate] AS [LogoutDate], 
-[UserSessions].[UserID] AS [UserID]
+[UserSessions].[UserID] AS [UserID], 
+[UserSessions].[ConnectionId] AS [ConnectionId]
 FROM [dbo].[UserSessions] AS [UserSessions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserSectionView" EntityType="Self.UserSectionView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[UserSectionView].[Name] AS [Name], 
+[UserSectionView].[ConnectionId] AS [ConnectionId], 
+[UserSectionView].[LastName] AS [LastName], 
+[UserSectionView].[UserName] AS [UserName]
+FROM [dbo].[UserSectionView] AS [UserSectionView]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_ChatRoom_Messages" Association="Self.FK_ChatRoom_Messages">
             <End Role="ChatRoom" EntitySet="ChatRoom" />
@@ -167,6 +190,7 @@ FROM [dbo].[UserSessions] AS [UserSessions]</DefiningQuery>
           <Property Name="LogoutDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_UserID_UserSessions" FromRole="UserSessions" ToRole="User" />
+          <Property Name="ConnectionId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_ChatRoom_Messages">
           <End Role="ChatRoom" Type="Self.ChatRoom" Multiplicity="0..1">
@@ -225,7 +249,19 @@ FROM [dbo].[UserSessions] AS [UserSessions]</DefiningQuery>
             <End Role="User" EntitySet="Users" />
             <End Role="UserSessions" EntitySet="UserSessions" />
           </AssociationSet>
+          <EntitySet Name="UserSectionViews" EntityType="ChatDBModel.UserSectionView" />
         </EntityContainer>
+        <EntityType Name="UserSectionView">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="ConnectionId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -269,10 +305,21 @@ FROM [dbo].[UserSessions] AS [UserSessions]</DefiningQuery>
           <EntitySetMapping Name="UserSessions">
             <EntityTypeMapping TypeName="ChatDBModel.UserSession">
               <MappingFragment StoreEntitySet="UserSessions">
+                <ScalarProperty Name="ConnectionId" ColumnName="ConnectionId" />
                 <ScalarProperty Name="UserSessionsID" ColumnName="UserSessionsID" />
                 <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
                 <ScalarProperty Name="LogoutDate" ColumnName="LogoutDate" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSectionViews">
+            <EntityTypeMapping TypeName="ChatDBModel.UserSectionView">
+              <MappingFragment StoreEntitySet="UserSectionView">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ConnectionId" ColumnName="ConnectionId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

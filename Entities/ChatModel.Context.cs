@@ -29,5 +29,6 @@ namespace Entities
         public DbSet<Message> Messages { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserSession> UserSessions { get; set; }
+        public DbSet<UserSectionView> UserSectionViews { get; set; }
     }
 }

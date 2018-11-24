@@ -12,6 +12,7 @@
         <AssociationConnector Association="ChatDBModel.FK_ChatRoom_Messages" ManuallyRouted="false" />
         <AssociationConnector Association="ChatDBModel.FK_OriginUserId_Messages" ManuallyRouted="false" />
         <AssociationConnector Association="ChatDBModel.FK_UserID_UserSessions" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ChatDBModel.UserSectionView" Width="1.5" PointX="5.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

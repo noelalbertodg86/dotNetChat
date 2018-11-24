@@ -2,6 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BussinesClass;
 using RabbitManager;
+using DBTEMP;
+using System.Data.SqlClient;
+using System.Data.Entity.Core.EntityClient;
 
 namespace ChatUnitTestProject
 {
@@ -33,5 +36,6 @@ namespace ChatUnitTestProject
             Assert.IsTrue(resultBot.Contains("APPL quote is"));
         }
 
+ 
     }
 }

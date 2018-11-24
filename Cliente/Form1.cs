@@ -23,7 +23,6 @@ namespace Cliente
             string path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "index.html");
             webBrowser1.Navigate(path);
         }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             webBrowser1.GoBack();
