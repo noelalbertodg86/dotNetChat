@@ -3,3 +3,6 @@ C:\dotNetFinancialChat\CustomizeException\bin\Debug\CustomizeException.pdb
 C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.csproj.CoreCompileInputs.cache
 C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.dll
 C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.pdb
+C:\dotNetFinancialChat\CustomizeException\bin\Debug\System.Data.SqlClient.dll
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.csproj.CopyComplete
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.csprojAssemblyReference.cache

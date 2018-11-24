@@ -12,3 +12,4 @@ C:\dotNetFinancialChat\Cliente\obj\Debug\Client.csproj.CoreCompileInputs.cache
 C:\dotNetFinancialChat\Cliente\obj\Debug\Client.csproj.CopyComplete
 C:\dotNetFinancialChat\Cliente\obj\Debug\Cliente.exe
 C:\dotNetFinancialChat\Cliente\obj\Debug\Cliente.pdb
+C:\dotNetFinancialChat\Cliente\bin\Debug\System.Data.SqlClient.dll

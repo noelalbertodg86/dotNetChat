@@ -19,7 +19,7 @@ namespace Data
         //get user by user and password for login
         public User GetUser(string user, string password)
         {
-            return entities.Users.Where(p => p.UserName == user && p.Password == password).FirstOrDefault();
+            return entities.Users.Where(p => p.UserName == user).ToList().Where(q=>q.Password == password).FirstOrDefault();
         }
 
         //get user by user name

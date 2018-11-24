@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "bc3defd57a7305a9617bcc6b5e938bf095bad583"
+    "signature": "19462c7ab0664d2abd0ec174d769e1322071114a"
   },
   "compilationOptions": {
     "defines": [
@@ -28,6 +28,7 @@
           "CustomizeException": "1.0.0",
           "Encrypt": "1.0.0",
           "Entities": "1.0.0",
+          "EntityFramework": "6.2.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.Extensions.Configuration": "2.1.1",
           "Microsoft.Extensions.Configuration.Json": "2.1.1",
@@ -37,6 +38,7 @@
           "RabbitManager": "1.0.0",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "System.Data.SQLite": "1.0.109.2",
+          "System.Data.SQLite.EF6": "1.0.109",
           "System.Data.SqlClient": "4.5.1"
         },
         "runtime": {
@@ -44,6 +46,22 @@
         },
         "compile": {
           "Server.dll": {}
+        }
+      },
+      "EntityFramework/6.2.0": {
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
+          }
+        },
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -562,6 +580,17 @@
           "lib/netstandard2.0/System.Data.SQLite.dll": {}
         }
       },
+      "System.Data.SQLite.EF6/1.0.109": {
+        "runtime": {
+          "lib/net46/System.Data.SQLite.EF6.dll": {
+            "assemblyVersion": "1.0.109.0",
+            "fileVersion": "1.0.109.0"
+          }
+        },
+        "compile": {
+          "lib/net46/System.Data.SQLite.EF6.dll": {}
+        }
+      },
       "System.Linq.Parallel/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -633,9 +662,6 @@
         }
       },
       "Entities/1.0.0": {
-        "dependencies": {
-          "EntityFramework": "6.0.0.0"
-        },
         "runtime": {
           "Entities.dll": {}
         },
@@ -653,14 +679,6 @@
         },
         "compile": {
           "RabbitManager.dll": {}
-        }
-      },
-      "EntityFramework.Reference/6.0.0.0": {
-        "runtime": {
-          "EntityFramework.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.2.61023.0"
-          }
         }
       },
       "RabbitMQ.Client.Reference/5.0.0.0": {
@@ -3630,6 +3648,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "EntityFramework/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
+      "path": "entityframework/6.2.0",
+      "hashPath": "entityframework.6.2.0.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
       "serviceable": true,
@@ -3819,6 +3844,13 @@
       "path": "system.data.sqlite.core/1.0.109.2",
       "hashPath": "system.data.sqlite.core.1.0.109.2.nupkg.sha512"
     },
+    "System.Data.SQLite.EF6/1.0.109": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1DbR0GQkbhEzr59vGaMBSbwSQeB8+iQnEbujRz6GIvawp9VBZjXLaUfDPjHEQTs9rwhJAYRZgT9j2ObM6OPE6g==",
+      "path": "system.data.sqlite.ef6/1.0.109",
+      "hashPath": "system.data.sqlite.ef6.1.0.109.nupkg.sha512"
+    },
     "System.Linq.Parallel/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3860,11 +3892,6 @@
     },
     "RabbitManager/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "EntityFramework.Reference/6.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },

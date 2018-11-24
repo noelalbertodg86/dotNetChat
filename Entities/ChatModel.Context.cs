@@ -12,11 +12,14 @@ namespace Entities
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.IO;
+    using System.Configuration;
+
     public partial class ChatDBEntities : DbContext
     {
+        static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["ChatDBEntities"].ConnectionString;
         public ChatDBEntities()
-            : base("name=ChatDBEntities")
+            : base(connection)
         {
         }
     

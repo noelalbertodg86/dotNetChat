@@ -11,4 +11,5 @@ C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.csproj.CoreCompileI
 C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.csproj.CopyComplete
 C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.dll
 C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.pdb
+C:\dotNetFinancialChat\RabbitManager\bin\Debug\System.Data.SqlClient.dll
 C:\dotNetFinancialChat\RabbitManager\obj\Debug\RabbitManager.csprojAssemblyReference.cache

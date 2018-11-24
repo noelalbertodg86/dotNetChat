@@ -1,6 +1,7 @@
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\BussinesClass.dll.config
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\BussinesClass.dll
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\BussinesClass.pdb
+C:\dotNetFinancialChat\BussinesClass\bin\Debug\CustomizeException.dll
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\Data.dll
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\Entities.dll
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\EntityFramework.dll
@@ -13,6 +14,7 @@ C:\dotNetFinancialChat\BussinesClass\bin\Debug\System.Data.SQLite.Linq.dll
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\System.Security.AccessControl.dll
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\System.Security.Permissions.dll
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\System.Security.Principal.Windows.dll
+C:\dotNetFinancialChat\BussinesClass\bin\Debug\CustomizeException.pdb
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\Data.pdb
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\Data.dll.config
 C:\dotNetFinancialChat\BussinesClass\bin\Debug\Entities.pdb
@@ -26,5 +28,3 @@ C:\dotNetFinancialChat\BussinesClass\obj\Debug\BusinessClass.csproj.CoreCompileI
 C:\dotNetFinancialChat\BussinesClass\obj\Debug\BusinessClass.csproj.CopyComplete
 C:\dotNetFinancialChat\BussinesClass\obj\Debug\BussinesClass.dll
 C:\dotNetFinancialChat\BussinesClass\obj\Debug\BussinesClass.pdb
-C:\dotNetFinancialChat\BussinesClass\bin\Debug\CustomizeException.dll
-C:\dotNetFinancialChat\BussinesClass\bin\Debug\CustomizeException.pdb

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
-using Data;
+//using Data;
 using System;
 using CustomizeException;
 
@@ -13,7 +13,7 @@ namespace Server
     /// <returns></returns>
     public class ChatHub : Hub
     {
-        private UserSectionViewDataClass userViewmanager = new UserSectionViewDataClass();
+        //private UserSectionViewDataClass userViewmanager = new UserSectionViewDataClass();
         
         /// <summary>
         /// send to client method broadcastMessage the parameters user and text
@@ -35,8 +35,8 @@ namespace Server
 
         public override Task OnDisconnectedAsync(System.Exception exception)
         {
-
-            string nameView = userViewmanager.GetUserNameByConectionId(Context.ConnectionId.ToString());
+            string nameView = "";
+            //string nameView = userViewmanager.GetUserNameByConectionId(Context.ConnectionId.ToString());
             Clients.All.SendAsync("broadcastMessage", "system", $"{nameView} left the chatroom");
             return base.OnDisconnectedAsync(exception);
 

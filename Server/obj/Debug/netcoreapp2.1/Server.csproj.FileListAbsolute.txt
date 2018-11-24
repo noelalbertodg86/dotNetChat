@@ -1,18 +1,20 @@
+C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Server.dll.config
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Server.deps.json
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Server.runtimeconfig.json
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Server.runtimeconfig.dev.json
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Server.dll
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Server.pdb
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\BussinesClass.dll
+C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\CustomizeException.dll
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Data.dll
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Encrypt.dll
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Entities.dll
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\RabbitManager.dll
-C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\EntityFramework.dll
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\RabbitMQ.Client.dll
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Microsoft.Diagnostics.Tracing.EventSource.dll
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\BussinesClass.pdb
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\BussinesClass.dll.config
+C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\CustomizeException.pdb
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Encrypt.pdb
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Encrypt.dll.config
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Entities.pdb
@@ -21,7 +23,6 @@ C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\RabbitManager.pdb
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\RabbitManager.dll.config
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Data.pdb
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Data.dll.config
-C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\EntityFramework.xml
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\RabbitMQ.Client.xml
 C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\Microsoft.Diagnostics.Tracing.EventSource.xml
 C:\dotNetFinancialChat\Server\obj\Debug\netcoreapp2.1\Server.csprojAssemblyReference.cache
@@ -34,5 +35,3 @@ C:\dotNetFinancialChat\Server\obj\Debug\netcoreapp2.1\Server.RazorTargetAssembly
 C:\dotNetFinancialChat\Server\obj\Debug\netcoreapp2.1\Server.csproj.CopyComplete
 C:\dotNetFinancialChat\Server\obj\Debug\netcoreapp2.1\Server.dll
 C:\dotNetFinancialChat\Server\obj\Debug\netcoreapp2.1\Server.pdb
-C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\CustomizeException.dll
-C:\dotNetFinancialChat\Server\bin\Debug\netcoreapp2.1\CustomizeException.pdb

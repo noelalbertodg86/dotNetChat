@@ -33,3 +33,4 @@ C:\dotNetFinancialChat\bot\obj\Debug\bot.csproj.CoreCompileInputs.cache
 C:\dotNetFinancialChat\bot\obj\Debug\bot.csproj.CopyComplete
 C:\dotNetFinancialChat\bot\obj\Debug\bot.exe
 C:\dotNetFinancialChat\bot\obj\Debug\bot.pdb
+C:\dotNetFinancialChat\bot\bin\Debug\System.Data.SqlClient.dll

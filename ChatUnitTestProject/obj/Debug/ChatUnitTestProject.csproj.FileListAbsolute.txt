@@ -1,3 +1,5 @@
+C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csprojAssemblyReference.cache
+C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csproj.CoreCompileInputs.cache
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -8,6 +10,7 @@ C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\ChatUnitTestProject.dll.con
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\ChatUnitTestProject.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\ChatUnitTestProject.pdb
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\BussinesClass.dll
+C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Encrypt.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Entities.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\EntityFramework.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\EntityFramework.SqlServer.dll
@@ -23,11 +26,14 @@ C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\System.Security.AccessContr
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\System.Security.Permissions.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\System.Security.Principal.Windows.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Data.dll
+C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\CustomizeException.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\RabbitMQ.Client.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Newtonsoft.Json.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\BussinesClass.pdb
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\BussinesClass.dll.config
+C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Encrypt.pdb
+C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Encrypt.dll.config
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Entities.pdb
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Entities.dll.config
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\RabbitManager.pdb
@@ -40,16 +46,10 @@ C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\System.Data.SQLite.xml
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\System.Data.SQLite.dll.config
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Data.pdb
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Data.dll.config
+C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\CustomizeException.pdb
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\RabbitMQ.Client.xml
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Newtonsoft.Json.xml
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
-C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csprojAssemblyReference.cache
-C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csproj.CoreCompileInputs.cache
 C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csproj.CopyComplete
 C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.pdb
-C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\CustomizeException.dll
-C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\CustomizeException.pdb
-C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\DBTEMP.dll
-C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\DBTEMP.pdb
-C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\DBTEMP.dll.config
