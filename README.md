@@ -11,18 +11,15 @@ All sent messages are stored in the database, as well as user profiles.
 
 3 - For the development of chatRoom, the technology based on websockes SignalR was used, creating an API .NET CORE project, where signalR  and HUB controllers interact to provide all the necessary functionalities to the system. Login, management, persistence and dissemination of messages to connected users. ["Server" solution]
 
-4 - For the development of the client part, a webbrowser with windows forms was generated, which invokes a previously designed and tested html page that provides the visual functionality of Login and ChatRoom.
-["Client" solution]
+4 - In addition, utilitarian solutions for the handling of RabbitMQ queues were created without duplicating code [solution "RabbitManagerUtil"] and [solution "EncryptUtil"] to avoid the flat management of passwords, ["ChatException" solution] to handler the app errors
 
-5 - In addition, utilitarian solutions for the handling of RabbitMQ queues were created without duplicating code [solution "RabbitManager"] and [solution "Encrypt"] to avoid the flat management of passwords.
-
-6 - A test project [solution "ChatUnitTestProyect"] is created as a solution for test management, examples of how to administer the tests are included in the same.
+4 - A test project [solution "ChatUnitTestProyect"] is created as a solution for test management, examples of how to administer the tests are included in the same.
 
 
 To start the project
-1- Start the Robot ["Bot"]
-2- Start the solution ["Server"]
-3- Use the browser of the solution ["Client"] or the browser Crome of the solution ["Server"]
+1- Start the Robot ["Bot"]  running the .exe of the solution
+2- Start the solution ["Server"] this will open a browser to test the application
+
 
 Nuget package used:
 EntityFramework
