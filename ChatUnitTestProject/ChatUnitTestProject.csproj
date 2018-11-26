@@ -99,17 +99,17 @@
       <Project>{3d47d4a6-7dea-4ff7-a688-ffa150414ffe}</Project>
       <Name>BusinessClass</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Encrypt\Encrypt.csproj">
+    <ProjectReference Include="..\Encrypt\EncryptUtil.csproj">
       <Project>{eee0c88f-08de-4fd2-bdf8-5c19c9f1efa7}</Project>
-      <Name>Encrypt</Name>
+      <Name>EncryptUtil</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{6e614241-9b72-47d3-bfad-c62d7920acbe}</Project>
       <Name>Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RabbitManager\RabbitManager.csproj">
+    <ProjectReference Include="..\RabbitManager\RabbitManagerUtil.csproj">
       <Project>{0f113bc9-1a7e-4fc4-93b0-cb93a4023080}</Project>
-      <Name>RabbitManager</Name>
+      <Name>RabbitManagerUtil</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
