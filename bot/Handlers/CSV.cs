@@ -8,7 +8,7 @@ namespace bot
     /// <summary>
     /// class focus on work with CSV files
     /// </summary>
-    public class CSV 
+    public class CSV : IAdapter
     {
         private string url = string.Empty;
         private string returnMessage = string.Empty;
@@ -21,6 +21,13 @@ namespace bot
 
         public CSV()
         {
+        }
+
+        public CSV(string parameters)
+        {
+            string[] parametersList = parameters.Split('|');
+            url = parametersList[0];
+            returnMessage = parametersList[1];
         }
 
         public string Execute()

@@ -44,19 +44,29 @@ namespace bot
             RabbitMessage inputMessage = new RabbitMessage();
             try
             {
-                string resultMessage = string.Empty;
-                inputMessage = JsonConvert.DeserializeObject<RabbitMessage>(IncomingMessage);
+                //handlers are managed with dependency injection through classes interfaces, 
+                //this allows in the future to add other handlers without much modification in the code
 
-                if (inputMessage.Message == "APPL")
+                string resultMessage = string.Empty;
+                string ConfigParameters = string.Empty;
+
+                inputMessage = JsonConvert.DeserializeObject<RabbitMessage>(IncomingMessage);
+                try
                 {
-                    resultMessage = new CSV(apiUrl, returnMessage).Execute();
-                    SendBotResponse(inputMessage.IdMessage, resultMessage);
-                    return resultMessage;
+                    //reading the paramters in the configuration for the current command in this case "APPL"
+                    ConfigParameters = ConfigurationManager.AppSettings[inputMessage.Message].ToString();
                 }
-                else
+                catch
                 {
                     throw new BotNotImplementedCommandException($"Sorry the command [{inputMessage.Message}] is not implemented");
                 }
+
+                //invoke the handler 
+                AdapterManager adapterManager = new AdapterManager();
+                resultMessage = adapterManager.getInstanceByParam(inputMessage.Message, ConfigParameters).Execute();
+                //return the result
+                SendBotResponse(inputMessage.IdMessage, resultMessage);
+                return resultMessage;
                 
             }
             catch (BotNotImplementedCommandException e)
