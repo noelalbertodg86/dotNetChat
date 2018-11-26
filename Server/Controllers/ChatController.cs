@@ -127,7 +127,7 @@ namespace Server.Controllers
                     messages.SaveUserToChatRoomMessage(chatMessajeInput.user, chatMessajeInput.chatroom, chatMessajeInput.message);
                 }
                 //broad cast the message to all conected users
-                await _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
+                _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
 
                 responseMessage.Codigo = "OK";
                 responseMessage.MensajeRetorno = "Message send successfully";
