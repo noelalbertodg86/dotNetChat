@@ -9,11 +9,11 @@ namespace bot
     class Program
     {
         /// <summary>
-        /// Start listening the [bot queue] for incoming messages to start de bot process.
+        /// Start listening the rabbitmq queue [bot] for incoming messages to start de bot process.
         /// The process is always listen no need for while(True) 
         /// </summary>
         /// <returns></returns>
-        static void Main(string[] args)
+        static  void Main(string[] args)
         {
             string localHost = ConfigurationManager.AppSettings["localhost"].ToString();
             string botQueue = ConfigurationManager.AppSettings["queue"].ToString();
