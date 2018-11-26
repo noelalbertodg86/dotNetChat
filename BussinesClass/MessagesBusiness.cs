@@ -28,29 +28,23 @@ namespace BussinesClass
 
         public bool SaveUserToChatRoomMessage(int userId, int chatRoomId, string text)
         {
-            try
-            {
-                Message newMessage = new Message();
-                newMessage.MessageText = text;
-                newMessage.OriginUserID = userId;
-                newMessage.ChatRoomID = chatRoomId;
-                newMessage.DestinyUserID = null;
-                newMessage.MessageDateTime = DateTime.Now;
 
-                messageManager.SaveMessage(newMessage);
-                return true;
-            }
-            catch(Exception e)
-            {
-                return false;
-            }
+            Message newMessage = new Message();
+            newMessage.MessageText = text;
+            newMessage.OriginUserID = userId;
+            newMessage.ChatRoomID = chatRoomId;
+            newMessage.DestinyUserID = null;
+            newMessage.MessageDateTime = DateTime.Now;
+
+            messageManager.SaveMessage(newMessage);
+            return true;
+
         }
 
 
         public bool SaveUserToChatRoomMessage(string userName, int chatRoomId, string text)
         {
-            try
-            {
+
                 User user_ = userManager.GetUser(userName);
                 if (user_ != null)
                 {
@@ -71,11 +65,6 @@ namespace BussinesClass
 
                 }
 
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
         }
 
 
