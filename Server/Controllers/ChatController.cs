@@ -27,20 +27,13 @@ namespace Server.Controllers
 
         public ChatController(IHubContext<ChatHub> hubContext)
         {
-            try
-            {
-                _hubContext = hubContext;
-                user = new UserBusiness();
-                messages = new MessagesBusiness();
-                rabbitManager = new SendRabbitMQMessage();
-                chatHub = new ChatHub();
-                encrypt = new EncryptManager();
-                userSessionManager = new UserSessionBusiness();
-            }
-            catch(Exception e)
-            {
-                string error = e.Message;
-            }
+            _hubContext = hubContext;
+            user = new UserBusiness();
+            messages = new MessagesBusiness();
+            rabbitManager = new SendRabbitMQMessage();
+            chatHub = new ChatHub();
+            encrypt = new EncryptManager();
+            userSessionManager = new UserSessionBusiness();
 
         }
 
