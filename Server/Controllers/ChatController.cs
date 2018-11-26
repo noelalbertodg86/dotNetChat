@@ -106,17 +106,19 @@ namespace Server.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("api/chat/message")]
-        public void Messagemanager([FromBody]ChatMessaje chatMessajeInput)
+        public string MessageManager([FromBody]ChatMessaje chatMessajeInput)
         {
+            ResponseMessage responseMessage = new ResponseMessage();
             try
             {
                 string resultMessage = chatMessajeInput.message;
-                System.Text.UTF8Encoding enc = new System.Text.UTF8Encoding();
-                //if some user write de comand for invoke the bot
-                if (resultMessage.Trim().Replace("/", "") == "/stock=APPL​".Trim().Replace("/",""))
+                //if some user write de comand for invoke the bot,
+                //for improve the command management if the user type /stock=APPL the system handler
+                //any other command the can come in the BOT, that is way the question StartsWith("/stock=")
+                if (resultMessage.Trim().StartsWith("/stock="))
                 {
                     //it is set a call in rabbitMQ in order of bot get and return the stock
-                    resultMessage = rabbitManager.SendAndRecieve(chatMessajeInput.message);
+                    resultMessage = rabbitManager.SendAndRecieve(resultMessage.Split("=")[1]);
                     chatMessajeInput.user = "BOT";
                 }
                 else
@@ -125,14 +127,19 @@ namespace Server.Controllers
                     messages.SaveUserToChatRoomMessage(chatMessajeInput.user, chatMessajeInput.chatroom, chatMessajeInput.message);
                 }
                 //broad cast the message to all conected users
-                _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
+                await _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
+
+                responseMessage.Codigo = "OK";
+                responseMessage.MensajeRetorno = "Message send successfully";
+                return JsonConvert.SerializeObject(responseMessage);
             }
             catch (Exception e)
             {
                 string error = e.Message;
-                
+                responseMessage.Codigo = "Error";
+                responseMessage.MensajeRetorno = "An error was occur sending message";
+                return JsonConvert.SerializeObject(responseMessage);
             }
-
 
         }
         /// <summary>
