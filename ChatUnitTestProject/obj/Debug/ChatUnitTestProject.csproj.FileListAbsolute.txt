@@ -1,5 +1,3 @@
-C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csprojAssemblyReference.cache
-C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csproj.CoreCompileInputs.cache
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -50,6 +48,8 @@ C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\CustomizeException.pdb
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\RabbitMQ.Client.xml
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Newtonsoft.Json.xml
 C:\dotNetFinancialChat\ChatUnitTestProject\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csprojAssemblyReference.cache
+C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csproj.CoreCompileInputs.cache
 C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.csproj.CopyComplete
 C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.dll
 C:\dotNetFinancialChat\ChatUnitTestProject\obj\Debug\ChatUnitTestProject.pdb
