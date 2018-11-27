@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Financial Chat. User manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <a href="index.html">Index</a>
+    <br />
+    <br />
+    <div class="container" id="loginDiv">
+        <div class="row">
+            <form name="userForm" id="userForm">
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastName" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="mail">EMail</label>
+                    <input type="text" class="form-control" id="mail" name="mail" aria-describedby="mail" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="birthday">Birthday</label>
+                    <input type="datetime" class="form-control" id="birthday" name="birthday">
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" class="form-control" id="department" name="department" aria-describedby="department" placeholder="Department">
+                </div>
+                <div class="form-group">
+                    <label for="user">User Name</label>
+                    <input type="text" class="form-control" id="user" name="user" aria-describedby="user" placeholder="User Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="button" id="create" class="btn btn-primary">Create User</button>
+            </form>
+        </div>
+    </div>
+    <br />
+
+    <div class="container">
+        <ul id="welcome"></ul>
+    </div>
+    <br />
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@aspnet/signalr@1.0.0-rc1-update1/dist/browser/signalr.min.js"></script>
+    <script type="text/javascript">
+        //establish conection with signalr hub
+        var connection = new signalR.HubConnectionBuilder()
+            .withUrl("/notifications")
+            .build();
+
+        //get button login properties
+        var create = document.getElementById("create");
+
+
+        ///recieve message from signalr hub
+        connection.on('recieveMessage', (value) => {
+            var liElement = document.createElement('li');
+            liElement.innerHTML = value;
+            document.getElementById('discussion').appendChild(liElement);
+        });
+
+        connection.on('broadcastMessage', (name, message) => {
+            var liElement = document.createElement('li');
+            liElement.innerHTML = '<strong>' + name + '</strong>:&nbsp;&nbsp;' + message;
+            document.getElementById('discussion').appendChild(liElement);
+        });
+
+
+        //send to web api post the  message from a user
+        create.addEventListener("click", event => {
+            fetch("http://localhost:57614/api/chat/createuser", {
+                method: "POST",
+                body: JSON.stringify({
+                    Name: document.getElementById('name').value,
+                    LastName: document.getElementById('lastName').value,
+                    Birthday: document.getElementById('birthday').value,
+                    Email: document.getElementById('mail').value,
+                    UserName: document.getElementById('user').value,
+                    Password: document.getElementById('password').value,
+                    CompanyDepartment: document.getElementById('department').value
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                return response.json();
+                }).then(data => {
+                    alert(data.MensajeRetorno)
+            }).catch(err => {
+                alert.err.MensajeRetorno
+            });
+        });
+
+
+
+        connection.start();
+    </script>
+    <br />
+
+
+</body>
+
+</html>
