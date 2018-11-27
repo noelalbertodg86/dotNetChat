@@ -28,7 +28,7 @@ namespace Data
 
         public Entities.UserSessions GetUserByConectionId(string conectionId)
         {
-            return entities.UserSessions.Where(p => p.ConnectionId == conectionId && p.LogoutDate == null).FirstOrDefault();
+            return entities.UserSessions.Where(p => p.ConnectionId == conectionId).FirstOrDefault();
         }
 
         public Entities.UserSessions GetUserCurrentConectionId(int userId)
