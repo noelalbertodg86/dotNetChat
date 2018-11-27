@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
+using BussinesClass;
+using Entities;
 
 
 namespace Server
@@ -30,18 +32,21 @@ namespace Server
             return Context.ConnectionId;
         }
 
+        /// <summary>
+        ///  when a user is disconnected, other users are notified
+        /// </summary>
+        /// <returns></returns>
         public override Task OnDisconnectedAsync(System.Exception exception)
         {
-            string nameView = "";
-            Clients.All.SendAsync("broadcastMessage", "system", $"{nameView} left the chatroom");
+            string disconectedUserName = "";
+            UserSessionBusiness userSessionBusiness = new UserSessionBusiness();
+            Entities.UserSessions userSession = userSessionBusiness.GetUserSession(Context.ConnectionId);
+            if (userSession != null)
+            { disconectedUserName = userSession.UserName; }
+
+            Clients.All.SendAsync("broadcastMessage", "system", $"{disconectedUserName} left the chatroom");
             return base.OnDisconnectedAsync(exception);
 
         }
-
-        //public override Task OnConnectedAsync()
-        //{
-        //    Clients.All.SendAsync("broadcastMessage", "system", $"{Context.ConnectionId} joined the conversation");
-        //    return base.OnConnectedAsync();
-        //}
     }
 }
