@@ -1,0 +1,16 @@
+C:\dotNetFinancialChat_V2\BusinessDB\obj\Debug\netcoreapp2.1\BusinessDB.csprojAssemblyReference.cache
+C:\dotNetFinancialChat_V2\BusinessDB\obj\Debug\netcoreapp2.1\BusinessDB.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat_V2\BusinessDB\obj\Debug\netcoreapp2.1\BusinessDB.AssemblyInfoInputs.cache
+C:\dotNetFinancialChat_V2\BusinessDB\obj\Debug\netcoreapp2.1\BusinessDB.AssemblyInfo.cs
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\BusinessDB.deps.json
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\BusinessDB.dll
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\BusinessDB.pdb
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\CustomizeException.dll
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\DataDB.dll
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\Entities.dll
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\CustomizeException.pdb
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\DataDB.pdb
+C:\dotNetFinancialChat_V2\BusinessDB\bin\Debug\netcoreapp2.1\Entities.pdb
+C:\dotNetFinancialChat_V2\BusinessDB\obj\Debug\netcoreapp2.1\BusinessDB.csproj.CopyComplete
+C:\dotNetFinancialChat_V2\BusinessDB\obj\Debug\netcoreapp2.1\BusinessDB.dll
+C:\dotNetFinancialChat_V2\BusinessDB\obj\Debug\netcoreapp2.1\BusinessDB.pdb

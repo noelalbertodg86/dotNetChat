@@ -26,11 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BussinesClass\BusinessClass.csproj" />
-    <ProjectReference Include="..\CustomizeException\CustomizeException.csproj" />
-    <ProjectReference Include="..\Encrypt\Encrypt.csproj" />
+    <ProjectReference Include="..\BusinessDB\BusinessDB.csproj" />
+    <ProjectReference Include="..\ChatLogger\ChatLoggerUtil.csproj" />
+    <ProjectReference Include="..\CustomizeException\ChatException.csproj" />
+    <ProjectReference Include="..\Encrypt\EncryptUtil.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
-    <ProjectReference Include="..\RabbitManager\RabbitManager.csproj" />
+    <ProjectReference Include="..\RabbitManager\RabbitManagerUtil.csproj" />
   </ItemGroup>
 
 </Project>

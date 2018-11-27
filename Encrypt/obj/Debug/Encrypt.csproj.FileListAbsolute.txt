@@ -15,3 +15,4 @@ C:\dotNetFinancialChat\Encrypt\obj\Debug\Encrypt.csproj.CopyComplete
 C:\dotNetFinancialChat\Encrypt\obj\Debug\Encrypt.dll
 C:\dotNetFinancialChat\Encrypt\obj\Debug\Encrypt.pdb
 C:\dotNetFinancialChat\Encrypt\bin\Debug\System.Data.SqlClient.dll
+C:\dotNetFinancialChat\Encrypt\obj\Debug\Encrypt.csprojAssemblyReference.cache

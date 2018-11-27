@@ -1,0 +1,12 @@
+C:\dotNetFinancialChat_V2\DataDB\bin\Debug\netcoreapp2.1\DataDB.deps.json
+C:\dotNetFinancialChat_V2\DataDB\bin\Debug\netcoreapp2.1\DataDB.dll
+C:\dotNetFinancialChat_V2\DataDB\obj\Debug\netcoreapp2.1\DataDB.csprojAssemblyReference.cache
+C:\dotNetFinancialChat_V2\DataDB\obj\Debug\netcoreapp2.1\DataDB.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat_V2\DataDB\obj\Debug\netcoreapp2.1\DataDB.AssemblyInfoInputs.cache
+C:\dotNetFinancialChat_V2\DataDB\obj\Debug\netcoreapp2.1\DataDB.AssemblyInfo.cs
+C:\dotNetFinancialChat_V2\DataDB\bin\Debug\netcoreapp2.1\DataDB.pdb
+C:\dotNetFinancialChat_V2\DataDB\bin\Debug\netcoreapp2.1\Entities.dll
+C:\dotNetFinancialChat_V2\DataDB\bin\Debug\netcoreapp2.1\Entities.pdb
+C:\dotNetFinancialChat_V2\DataDB\obj\Debug\netcoreapp2.1\DataDB.csproj.CopyComplete
+C:\dotNetFinancialChat_V2\DataDB\obj\Debug\netcoreapp2.1\DataDB.dll
+C:\dotNetFinancialChat_V2\DataDB\obj\Debug\netcoreapp2.1\DataDB.pdb

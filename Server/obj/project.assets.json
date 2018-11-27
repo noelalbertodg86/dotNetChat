@@ -1652,18 +1652,18 @@
           "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/2.1.1": {
+      "Microsoft.EntityFrameworkCore/2.1.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.1",
-          "Microsoft.EntityFrameworkCore.Analyzers": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.4",
+          "Microsoft.EntityFrameworkCore.Analyzers": "2.1.4",
           "Microsoft.Extensions.Caching.Memory": "2.1.1",
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
           "Microsoft.Extensions.Logging": "2.1.1",
           "Remotion.Linq": "2.2.0",
           "System.Collections.Immutable": "1.5.0",
           "System.ComponentModel.Annotations": "4.5.0",
-          "System.Diagnostics.DiagnosticSource": "4.5.0",
+          "System.Diagnostics.DiagnosticSource": "4.5.1",
           "System.Interactive.Async": "3.1.1"
         },
         "compile": {
@@ -1673,7 +1673,7 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Abstractions/2.1.4": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -1682,14 +1682,14 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Analyzers/2.1.4": {
         "type": "package"
       },
-      "Microsoft.EntityFrameworkCore.Design/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/2.1.4": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.1.1"
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.4"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -1713,10 +1713,10 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/2.1.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.1.1"
+          "Microsoft.EntityFrameworkCore": "2.1.4"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -1725,10 +1725,23 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.6",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.SqlServer/2.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.4",
           "System.Data.SqlClient": "4.5.1"
         },
         "compile": {
@@ -1738,10 +1751,24 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/2.1.1": {
+      "Microsoft.EntityFrameworkCore.SqlServer.Design/1.1.6": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "2.1.1"
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.6",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.Design.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.Design.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/2.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "2.1.4"
         },
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -3360,7 +3387,7 @@
           "ref/netstandard1.3/System.Diagnostics.Debug.dll": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.5.0": {
+      "System.Diagnostics.DiagnosticSource/4.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -4697,52 +4724,69 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "BusinessClass/1.0.0": {
+      "BusinessDB/1.0.0": {
         "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "CustomizeException": "1.0.0",
-          "Data": "1.0.0",
-          "Entities": "1.0.0"
+          "ChatException": "1.0.0",
+          "DataDB": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/BusinessClass.dll": {}
+          "bin/placeholder/BusinessDB.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BusinessClass.dll": {}
+          "bin/placeholder/BusinessDB.dll": {}
         }
       },
-      "CustomizeException/1.0.0": {
+      "ChatException/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/CustomizeException.dll": {}
+          "bin/placeholder/ChatException.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CustomizeException.dll": {}
+          "bin/placeholder/ChatException.dll": {}
         }
       },
-      "Data/1.0.0": {
+      "ChatLoggerUtil/1.0.0": {
         "type": "project",
+        "compile": {
+          "bin/placeholder/ChatLoggerUtil.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChatLoggerUtil.dll": {}
+        }
+      },
+      "DataDB/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "Entities": "1.0.0"
+          "Entities": "1.0.0",
+          "System.Linq": "4.3.0"
         },
         "compile": {
-          "bin/placeholder/Data.dll": {}
+          "bin/placeholder/DataDB.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Data.dll": {}
+          "bin/placeholder/DataDB.dll": {}
         }
       },
-      "Encrypt/1.0.0": {
+      "EncryptUtil/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/Encrypt.dll": {}
+          "bin/placeholder/EncryptUtil.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Encrypt.dll": {}
+          "bin/placeholder/EncryptUtil.dll": {}
         }
       },
       "Entities/1.0.0": {
         "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.1.4",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
+          "Microsoft.EntityFrameworkCore.Tools": "2.1.4"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -4750,13 +4794,13 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
-      "RabbitManager/1.0.0": {
+      "RabbitManagerUtil/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/RabbitManager.dll": {}
+          "bin/placeholder/RabbitManagerUtil.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RabbitManager.dll": {}
+          "bin/placeholder/RabbitManagerUtil.dll": {}
         }
       }
     }
@@ -6213,50 +6257,46 @@
         "microsoft.dotnet.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/2.1.1": {
-      "sha512": "R0zD5lDEA0Aari3+stBhAP5dredWIHcu4+tKfumG7Q6r34Psl5a3fC4hXOBD4W8Mc+aRaee3xehLQC0M0EHEdA==",
+    "Microsoft.EntityFrameworkCore/2.1.4": {
+      "sha512": "72l8hbaJ5cXxZLCFeo46MDnvU8XJiDRNh1YQPzAlqVAlQrUwSVojYbJyOE7vbWqsb8rRqQYJ6NsmgPdUv/NKzw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/2.1.1",
+      "path": "microsoft.entityframeworkcore/2.1.4",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/2.1.1": {
-      "sha512": "eAkWeRhvwMLbAmS73HUESlE/sRmGYdKr1nzZ/IOmyRFz37e8BGEGwwbazKhi2OjjzdIWJxmMdB4nGQUP2mco7A==",
+    "Microsoft.EntityFrameworkCore.Abstractions/2.1.4": {
+      "sha512": "5Vc1zdCq7p+E/8ndJnTKHebJeqSC/1gb4hXDPi7UHdqURAxWl3lZV5+79x/dSfO/P6n/sEz5fURYGOMDoreXUA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/2.1.1",
+      "path": "microsoft.entityframeworkcore.abstractions/2.1.4",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/2.1.1": {
-      "sha512": "Cvyj3q8j0vhhEBbxRXXTZZhrO0RW/hRJQ6VzfGcfvMh+Zhkr8Jl4CP8gA5GXOgg+0dxYYC+GfT27EqjbxM3Qbg==",
+    "Microsoft.EntityFrameworkCore.Analyzers/2.1.4": {
+      "sha512": "cYjXickepORM4UmNdqdZ3l74xhG5OHWMDxsFlqHJGm0qxLAHv5GAI2dKkkGslrjyaPYnfRW3JhAWubBWBt0XUg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/2.1.1",
+      "path": "microsoft.entityframeworkcore.analyzers/2.1.4",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
-        "microsoft.entityframeworkcore.analyzers.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/2.1.1": {
-      "sha512": "/kmRSJHgtcng6eNsy7ab3Ac2ofqqoQAZTiTPMKlLaD6WaEG0t5KJuj71/jAMo9LGgaeKGMI0m5wmG+LsIAlaSA==",
+    "Microsoft.EntityFrameworkCore.Design/2.1.4": {
+      "sha512": "oQ9riABU2UiAE0aj1/yRZx58dvyTsmmSL2tgASrhYxwHeAAEO9is1OavrdjC6hDc+t/M0/PsJ8GFyRp8cedlWg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/2.1.1",
+      "path": "microsoft.entityframeworkcore.design/2.1.4",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "build/net461/Microsoft.EntityFrameworkCore.Design.props",
         "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props",
@@ -6264,7 +6304,7 @@
         "lib/net461/Microsoft.EntityFrameworkCore.Design.xml",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -6281,41 +6321,66 @@
         "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/2.1.1": {
-      "sha512": "GdS22wCLqf+W+NvWzuz/0oXmulD0mlxa65Z/RO65YiAJRDhLZ/4/QYeDEIvh8HF9Fw4kB/UnrQ756uv0+IDDKQ==",
+    "Microsoft.EntityFrameworkCore.Relational/2.1.4": {
+      "sha512": "cn/sEABCjVEp+Ji8LaDjGc7kjD2fJ9y46GL7rTnP1imWmdEYr3eL1oTNKOukMCNwjEGf1pZid0f0LKXaWBGbHw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/2.1.1",
+      "path": "microsoft.entityframeworkcore.relational/2.1.4",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/2.1.1": {
-      "sha512": "+owJ/RcmFOrRseb+9PEjqhoOcE7l+DeTe0Jwte0tqhYoiPxZpC6jtGhUhpftPSBkC662siPR7kNm2TfxpPVilQ==",
+    "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
+      "sha512": "UVq94HrsK/eUSo4bkYBYW30UQ/uH2GoXcjTv7oIdeMKnAjLE3jm3C/BmftkQpr9beQCSbbcEySaVDhjlhrcQJQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/2.1.1",
+      "path": "microsoft.entityframeworkcore.relational.design/1.1.6",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.dll",
+        "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.xml",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.xml",
+        "microsoft.entityframeworkcore.relational.design.1.1.6.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer/2.1.4": {
+      "sha512": "pVQpP3bOv26GLn6Ff5ocS1ibP+kqkjh6Wz14xdxLIVIQBVp+eb/3jaHqkvBJS+fXMfLyyAnHCNALyaTvp9bRZA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.sqlserver/2.1.4",
+      "files": [
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Tools/2.1.1": {
-      "sha512": "OYHhKbFNJCSHpkLAKI9yqTx3+SZ7aHKZaCP+G5ctlL/rZm5Y37Ke00abUhp5mFEJlvEueYfOGDx/GjltEs210A==",
+    "Microsoft.EntityFrameworkCore.SqlServer.Design/1.1.6": {
+      "sha512": "TBH6CWmLns4U38WO64Q9ecOcWdMHCdFX/2vM4aJtbrt2CftG4TbAY5/9BNVacw/64HbCv7Hzjk/5xU26gxL8Xg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/2.1.1",
+      "path": "microsoft.entityframeworkcore.sqlserver.design/1.1.6",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net451/Microsoft.EntityFrameworkCore.SqlServer.Design.dll",
+        "lib/net451/Microsoft.EntityFrameworkCore.SqlServer.Design.xml",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.Design.dll",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.SqlServer.Design.xml",
+        "microsoft.entityframeworkcore.sqlserver.design.1.1.6.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Tools/2.1.4": {
+      "sha512": "+mMAfPku3xFvFgzEYtFYZ6yek8EJz6NJq6AhO/yaqW2RS+6INWS54dfhy3qOddX2EXqE1ZEhkz5L1Zf1F8rAdQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/2.1.4",
+      "files": [
         ".signature.p7s",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.tools.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.tools.nuspec",
         "tools/EntityFrameworkCore.PowerShell2.psd1",
         "tools/EntityFrameworkCore.PowerShell2.psm1",
@@ -8956,12 +9021,11 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/4.5.0": {
-      "sha512": "UumL3CJklk5WyEt0eImPmjeuyY1JgJ7Thmg2hAeZGKCv+9iuuAsoc2wcXjypdo3J8VNEmVCH2Bgn/kIw8NI2bA==",
+    "System.Diagnostics.DiagnosticSource/4.5.1": {
+      "sha512": "m86SgxAIi5j0iGzx2y1LrcMcopIYfinfcojyQ9CcNRy3MZvi0dVuDlMj2M7kV6MMGSunqZ+OnQ+rQbxWafFBaw==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/4.5.0",
+      "path": "system.diagnostics.diagnosticsource/4.5.1",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -8975,7 +9039,7 @@
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.4.5.0.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -12781,42 +12845,48 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "BusinessClass/1.0.0": {
+    "BusinessDB/1.0.0": {
       "type": "project",
-      "path": "../BussinesClass/BusinessClass.csproj",
-      "msbuildProject": "../BussinesClass/BusinessClass.csproj"
+      "path": "../BusinessDB/BusinessDB.csproj",
+      "msbuildProject": "../BusinessDB/BusinessDB.csproj"
     },
-    "CustomizeException/1.0.0": {
+    "ChatException/1.0.0": {
       "type": "project",
-      "path": "../CustomizeException/CustomizeException.csproj",
-      "msbuildProject": "../CustomizeException/CustomizeException.csproj"
+      "path": "../CustomizeException/ChatException.csproj",
+      "msbuildProject": "../CustomizeException/ChatException.csproj"
     },
-    "Data/1.0.0": {
+    "ChatLoggerUtil/1.0.0": {
       "type": "project",
-      "path": "../Data/Data.csproj",
-      "msbuildProject": "../Data/Data.csproj"
+      "path": "../ChatLogger/ChatLoggerUtil.csproj",
+      "msbuildProject": "../ChatLogger/ChatLoggerUtil.csproj"
     },
-    "Encrypt/1.0.0": {
+    "DataDB/1.0.0": {
       "type": "project",
-      "path": "../Encrypt/Encrypt.csproj",
-      "msbuildProject": "../Encrypt/Encrypt.csproj"
+      "path": "../DataDB/DataDB.csproj",
+      "msbuildProject": "../DataDB/DataDB.csproj"
+    },
+    "EncryptUtil/1.0.0": {
+      "type": "project",
+      "path": "../Encrypt/EncryptUtil.csproj",
+      "msbuildProject": "../Encrypt/EncryptUtil.csproj"
     },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
-    "RabbitManager/1.0.0": {
+    "RabbitManagerUtil/1.0.0": {
       "type": "project",
-      "path": "../RabbitManager/RabbitManager.csproj",
-      "msbuildProject": "../RabbitManager/RabbitManager.csproj"
+      "path": "../RabbitManager/RabbitManagerUtil.csproj",
+      "msbuildProject": "../RabbitManager/RabbitManagerUtil.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "BusinessClass >= 1.0.0",
-      "CustomizeException >= 1.0.0",
-      "Encrypt >= 1.0.0",
+      "BusinessDB >= 1.0.0",
+      "ChatException >= 1.0.0",
+      "ChatLoggerUtil >= 1.0.0",
+      "EncryptUtil >= 1.0.0",
       "Entities >= 1.0.0",
       "EntityFramework >= 6.2.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
@@ -12825,7 +12895,7 @@
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1",
       "Newtonsoft.Json >= 11.0.2",
-      "RabbitManager >= 1.0.0",
+      "RabbitManagerUtil >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 4.5.0",
       "System.Data.SQLite >= 1.0.109.2",
       "System.Data.SQLite.EF6 >= 1.0.109",
@@ -12839,11 +12909,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dotNetFinancialChat\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\dotNetFinancialChat_V2\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\dotNetFinancialChat\\Server\\Server.csproj",
+      "projectPath": "C:\\dotNetFinancialChat_V2\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\noel.diaz\\.nuget\\packages\\",
-      "outputPath": "C:\\dotNetFinancialChat\\Server\\obj\\",
+      "outputPath": "C:\\dotNetFinancialChat_V2\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12862,20 +12932,23 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\dotNetFinancialChat\\BussinesClass\\BusinessClass.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat\\BussinesClass\\BusinessClass.csproj"
+            "C:\\dotNetFinancialChat_V2\\BusinessDB\\BusinessDB.csproj": {
+              "projectPath": "C:\\dotNetFinancialChat_V2\\BusinessDB\\BusinessDB.csproj"
             },
-            "C:\\dotNetFinancialChat\\CustomizeException\\CustomizeException.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat\\CustomizeException\\CustomizeException.csproj"
+            "C:\\dotNetFinancialChat_V2\\ChatLogger\\ChatLoggerUtil.csproj": {
+              "projectPath": "C:\\dotNetFinancialChat_V2\\ChatLogger\\ChatLoggerUtil.csproj"
             },
-            "C:\\dotNetFinancialChat\\Encrypt\\Encrypt.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat\\Encrypt\\Encrypt.csproj"
+            "C:\\dotNetFinancialChat_V2\\CustomizeException\\ChatException.csproj": {
+              "projectPath": "C:\\dotNetFinancialChat_V2\\CustomizeException\\ChatException.csproj"
             },
-            "C:\\dotNetFinancialChat\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat\\Entities\\Entities.csproj"
+            "C:\\dotNetFinancialChat_V2\\Encrypt\\EncryptUtil.csproj": {
+              "projectPath": "C:\\dotNetFinancialChat_V2\\Encrypt\\EncryptUtil.csproj"
             },
-            "C:\\dotNetFinancialChat\\RabbitManager\\RabbitManager.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat\\RabbitManager\\RabbitManager.csproj"
+            "C:\\dotNetFinancialChat_V2\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\dotNetFinancialChat_V2\\Entities\\Entities.csproj"
+            },
+            "C:\\dotNetFinancialChat_V2\\RabbitManager\\RabbitManagerUtil.csproj": {
+              "projectPath": "C:\\dotNetFinancialChat_V2\\RabbitManager\\RabbitManagerUtil.csproj"
             }
           }
         }

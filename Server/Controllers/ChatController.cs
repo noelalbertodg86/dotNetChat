@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using BussinesClass;
-using Entities;
 using RabbitManager;
 using Encrypt;
 using Newtonsoft.Json;
 using CustomizeException;
-using System.Configuration;
+using Entities;
 
 namespace Server.Controllers
 {
@@ -19,22 +18,20 @@ namespace Server.Controllers
         private UserBusiness user;
         private MessagesBusiness messages;
         private SendRabbitMQMessage rabbitManager;
-        private ChatHub chatHub;
-        private Encrypt.EncryptManager encrypt;
+        private EncryptManager encrypt;
         private UserSessionBusiness userSessionManager;
-    
+
+
 
 
         public ChatController(IHubContext<ChatHub> hubContext)
         {
-            _hubContext = hubContext;
-            user = new UserBusiness();
-            messages = new MessagesBusiness();
-            rabbitManager = new SendRabbitMQMessage();
-            chatHub = new ChatHub();
-            encrypt = new EncryptManager();
-            userSessionManager = new UserSessionBusiness();
-
+                _hubContext = hubContext;
+                user = new UserBusiness();
+                messages = new MessagesBusiness();
+                rabbitManager = new SendRabbitMQMessage();
+                encrypt = new EncryptManager();
+                userSessionManager = new UserSessionBusiness();
         }
 
 
@@ -51,23 +48,24 @@ namespace Server.Controllers
             ResponseMessage responseMessage = new ResponseMessage();
             try
             {
+                
                 //the password is encrypted for  security
                 userLoginData.password = encrypt.EncryptTextBase64(userLoginData.password);
                 //validate login credentials
-                Entities.User loginUser = user.Login(userLoginData.user, userLoginData.password);
+                Entities.User loginUser =user.Login(userLoginData.user, userLoginData.password);
                 //save the user section
-                userSessionManager.SetLoginUserSession(loginUser.UserID, chatHub.getConnectionId());
+                userSessionManager.SetLoginUserSession(loginUser.UserId, userLoginData.conectionId, userLoginData.user);
 
                 //get the 50 or less last save message in the current chatroom
-                List<Message> last50Messages = messages.GetLast50ChatRoomMessages(userLoginData.chatRoomId);
-                foreach (Message m in last50Messages)
+                List<MessageView> last50Messages = messages.GetLast50ChatRoomMessages(userLoginData.chatRoomId);
+                foreach (MessageView m in last50Messages)
                 {
                     //broadcast the  obtained messages to the new conected user
-                    _hubContext.Clients.Client(chatHub.getConnectionId()).SendAsync("broadcastMessage", m.OriginUserID, m.MessageText);
+                     _hubContext.Clients.Client(userLoginData.conectionId).SendAsync("broadcastMessage", m.OriginUserName, m.MessageText);
 
                 }
                 // notify all connected users of the new user except the user who logged in
-                _hubContext.Clients.AllExcept(chatHub.getConnectionId()).SendAsync("recieveMessage", $"Welcome to chat {userLoginData.user}");
+                 _hubContext.Clients.AllExcept(userLoginData.conectionId).SendAsync("recieveMessage", $"Welcome to chat {loginUser.Name}");
 
                 //build and return the ok response
                 responseMessage.Codigo = "OK";
@@ -105,7 +103,7 @@ namespace Server.Controllers
             try
             {
                 string resultMessage = chatMessajeInput.message;
-                //if some user write de comand for invoke the bot,
+                //if some user write de comand for invoke the bot, 
                 //for improve the command management if the user type /stock=APPL the system handler
                 //any other command the can come in the BOT, that is way the question StartsWith("/stock=")
                 if (resultMessage.Trim().StartsWith("/stock="))
@@ -118,9 +116,10 @@ namespace Server.Controllers
                 {
                     //the send message is save into data base
                     messages.SaveUserToChatRoomMessage(chatMessajeInput.user, chatMessajeInput.chatroom, chatMessajeInput.message);
+                     
                 }
                 //broad cast the message to all conected users
-                _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
+                 _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
 
                 responseMessage.Codigo = "OK";
                 responseMessage.MensajeRetorno = "Message send successfully";
@@ -135,6 +134,7 @@ namespace Server.Controllers
             }
 
         }
+
         /// <summary>
         ///  this function create a new user in the system
         /// </summary>

@@ -22,7 +22,6 @@ To start the project
 
 
 Nuget package used:
-EntityFramework
 Microsoft.AspNetCore.App
 Microsoft.Diagnostics.Tracing.EventSource.Redist
 Microsoft.Extensions.Configuration
@@ -32,6 +31,8 @@ MSTest.TestAdapter
 Newtonsoft.Json
 RabbitMQ.Client
 System.Configuration.ConfigurationManager
-
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.SqlServer.Design
+Microsoft.EntityFrameworkCore.SqlServer
 
 Thanks for the opportunity !!!!!

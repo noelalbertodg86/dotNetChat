@@ -86,15 +86,24 @@
                 document.getElementById('discussion').appendChild(liElement);
             });
 
+            var ConnectionId = '';
             //send to web api post a login  request
             submit.addEventListener("click", event => {
+                 connection.invoke('getConnectionId')
+                    .then(function (connectionId) {
+                        // Send the connectionId to controller
+                        //alert("connectionID: " + connectionId);
+                        
+                   
+
                 fetch("http://localhost:57614/api/chat/login", {
                     method: "POST",
                     body: JSON.stringify({
                         user: document.getElementById('user').value,
                         password: document.getElementById('password').value,
                         keepSectionAlive: document.getElementById('aliveCheck').value,
-                        chatRoomId: 1
+                        chatRoomId: 1,
+                        conectionId: connectionId
 
                     }),
                     headers: {
@@ -119,7 +128,9 @@
                 }).catch(err => {
                     alert.err.MensajeRetorno
                 });
+                    });
             });
+
 
             //send to web api post the  message from a user
             var sendbutton = document.getElementById("send");

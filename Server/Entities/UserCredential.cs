@@ -13,5 +13,7 @@ namespace Server
         public string keepSectionAlive { get; set; }
 
         public int chatRoomId { get; set; }
+
+        public string conectionId { get; set; }
     }
 }

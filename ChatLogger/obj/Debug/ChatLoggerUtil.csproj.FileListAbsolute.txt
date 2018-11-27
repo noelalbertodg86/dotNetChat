@@ -1,0 +1,10 @@
+C:\dotNetFinancialChat\ChatLogger\bin\Debug\ChatLogger.dll
+C:\dotNetFinancialChat\ChatLogger\bin\Debug\ChatLogger.pdb
+C:\dotNetFinancialChat\ChatLogger\obj\Debug\ChatLoggerUtil.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat\ChatLogger\obj\Debug\ChatLogger.dll
+C:\dotNetFinancialChat\ChatLogger\obj\Debug\ChatLogger.pdb
+C:\dotNetFinancialChat_V2\ChatLogger\bin\Debug\ChatLogger.dll
+C:\dotNetFinancialChat_V2\ChatLogger\bin\Debug\ChatLogger.pdb
+C:\dotNetFinancialChat_V2\ChatLogger\obj\Debug\ChatLoggerUtil.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat_V2\ChatLogger\obj\Debug\ChatLogger.dll
+C:\dotNetFinancialChat_V2\ChatLogger\obj\Debug\ChatLogger.pdb

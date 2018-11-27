@@ -1,0 +1,15 @@
+C:\dotNetFinancialChat\CustomizeException\bin\Debug\CustomizeException.dll
+C:\dotNetFinancialChat\CustomizeException\bin\Debug\CustomizeException.pdb
+C:\dotNetFinancialChat\CustomizeException\bin\Debug\System.Data.SqlClient.dll
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\ChatException.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\ChatException.csproj.CopyComplete
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.dll
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\CustomizeException.pdb
+C:\dotNetFinancialChat\CustomizeException\obj\Debug\ChatException.csprojAssemblyReference.cache
+C:\dotNetFinancialChat_V2\CustomizeException\bin\Debug\CustomizeException.dll
+C:\dotNetFinancialChat_V2\CustomizeException\bin\Debug\CustomizeException.pdb
+C:\dotNetFinancialChat_V2\CustomizeException\bin\Debug\System.Data.SqlClient.dll
+C:\dotNetFinancialChat_V2\CustomizeException\obj\Debug\ChatException.csproj.CoreCompileInputs.cache
+C:\dotNetFinancialChat_V2\CustomizeException\obj\Debug\ChatException.csproj.CopyComplete
+C:\dotNetFinancialChat_V2\CustomizeException\obj\Debug\CustomizeException.dll
+C:\dotNetFinancialChat_V2\CustomizeException\obj\Debug\CustomizeException.pdb
