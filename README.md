@@ -2,7 +2,7 @@
 
 For the development of the application several technologies were taken into account, all on .net with the IDE VISUAL STUDIO and several solutions.
 
-1- the database connection and management was done using the EntityFramework library and a n-layer design pattern ["Entity", "Data", "BusinessClass" solution].
+1- the database connection and management was done using the EntityFramework library and a n-layer design pattern ["Entity", "DataDB", "BusinessDB" solution].
 In the application you can see the structure and relationships between databases, always trying to maintain a simple system that meets the requirements.
 All sent messages are stored in the database, as well as user profiles.
 
