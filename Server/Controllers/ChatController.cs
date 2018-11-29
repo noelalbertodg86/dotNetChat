@@ -8,6 +8,7 @@ using Encrypt;
 using Newtonsoft.Json;
 using CustomizeException;
 using Entities;
+using System.Threading.Tasks;
 
 namespace Server.Controllers
 {
@@ -36,19 +37,19 @@ namespace Server.Controllers
 
 
         /// <summary>
-        /// in this funtion de user make login in the sistem using encrypt password, and load the las 50 messages 
-        /// of the current chatroom, also al connected user is notify  
+        /// in this funtion de user make login in the sistem using encrypt password, and load the las 50 messages
+        /// of the current chatroom, also al connected user is notify
         /// </summary>
         /// <param name="userLoginData"></param>
         /// <returns>string json with result</returns>
         [HttpPost]
         [Route("api/chat/login")]
-        public string Login([FromBody]UserCredential userLoginData)
+        public async Task<string> Login([FromBody]UserCredential userLoginData)
         {
             ResponseMessage responseMessage = new ResponseMessage();
             try
             {
-                
+
                 //the password is encrypted for  security
                 userLoginData.password = encrypt.EncryptTextBase64(userLoginData.password);
                 //validate login credentials
@@ -61,11 +62,11 @@ namespace Server.Controllers
                 foreach (MessageView m in last50Messages)
                 {
                     //broadcast the  obtained messages to the new conected user
-                     _hubContext.Clients.Client(userLoginData.conectionId).SendAsync("broadcastMessage", m.OriginUserName, m.MessageText);
+                     await _hubContext.Clients.Client(userLoginData.conectionId).SendAsync("broadcastMessage", m.OriginUserName, m.MessageText);
 
                 }
                 // notify all connected users of the new user except the user who logged in
-                 _hubContext.Clients.AllExcept(userLoginData.conectionId).SendAsync("recieveMessage", $"Welcome to chat {loginUser.Name}");
+                 await _hubContext.Clients.AllExcept(userLoginData.conectionId).SendAsync("recieveMessage", $"Welcome to chat {loginUser.Name}");
 
                 //build and return the ok response
                 responseMessage.Codigo = "OK";
@@ -87,7 +88,7 @@ namespace Server.Controllers
                 return JsonConvert.SerializeObject(responseMessage);
             }
 
-            
+
         }
 
         /// <summary>
@@ -97,13 +98,13 @@ namespace Server.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("api/chat/message")]
-        public string MessageManager([FromBody]ChatMessaje chatMessajeInput)
+        public async Task<string> MessageManager([FromBody]ChatMessaje chatMessajeInput)
         {
             ResponseMessage responseMessage = new ResponseMessage();
             try
             {
                 string resultMessage = chatMessajeInput.message;
-                //if some user write de comand for invoke the bot, 
+                //if some user write de comand for invoke the bot,
                 //for improve the command management if the user type /stock=APPL the system handler
                 //any other command the can come in the BOT, that is way the question StartsWith("/stock=")
                 if (resultMessage.Trim().StartsWith("/stock="))
@@ -116,10 +117,10 @@ namespace Server.Controllers
                 {
                     //the send message is save into data base
                     messages.SaveUserToChatRoomMessage(chatMessajeInput.user, chatMessajeInput.chatroom, chatMessajeInput.message);
-                     
+
                 }
                 //broad cast the message to all conected users
-                 _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
+                 await _hubContext.Clients.All.SendAsync("broadcastMessage", chatMessajeInput.user, resultMessage);
 
                 responseMessage.Codigo = "OK";
                 responseMessage.MensajeRetorno = "Message send successfully";
