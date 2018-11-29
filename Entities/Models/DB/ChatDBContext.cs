@@ -1,13 +1,25 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
+using Encrypt;
 
 namespace Entities
 {
     public partial class ChatDBContext : DbContext
     {
+        EncryptManager encrypt = new EncryptManager();
+        private static string conectionStrings = "";
+
+
         public ChatDBContext()
         {
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
+            var builder = new ConfigurationBuilder().AddJsonFile(path, optional: false, reloadOnChange: true);
+            var configuration = builder.Build();
+            string conectionStringsEncrypted = configuration["Settings:conectionStrings"];
+            conectionStrings = encrypt.DecryptTextBase64(conectionStringsEncrypted);
         }
 
         public ChatDBContext(DbContextOptions<ChatDBContext> options)
@@ -24,7 +36,7 @@ namespace Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=localhost\\SQLLOCAL;Database=ChatDB;user id=sa;password=Davy14Caro16;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(conectionStrings);
             }
         }
 
