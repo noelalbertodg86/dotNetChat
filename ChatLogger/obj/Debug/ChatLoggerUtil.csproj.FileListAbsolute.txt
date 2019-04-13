@@ -8,3 +8,9 @@ C:\dotNetFinancialChat_V2\ChatLogger\bin\Debug\ChatLogger.pdb
 C:\dotNetFinancialChat_V2\ChatLogger\obj\Debug\ChatLoggerUtil.csproj.CoreCompileInputs.cache
 C:\dotNetFinancialChat_V2\ChatLogger\obj\Debug\ChatLogger.dll
 C:\dotNetFinancialChat_V2\ChatLogger\obj\Debug\ChatLogger.pdb
+C:\dotNetChat\ChatLogger\bin\Debug\ChatLogger.dll
+C:\dotNetChat\ChatLogger\bin\Debug\ChatLogger.pdb
+C:\dotNetChat\ChatLogger\obj\Debug\ChatLoggerUtil.csprojAssemblyReference.cache
+C:\dotNetChat\ChatLogger\obj\Debug\ChatLoggerUtil.csproj.CoreCompileInputs.cache
+C:\dotNetChat\ChatLogger\obj\Debug\ChatLogger.dll
+C:\dotNetChat\ChatLogger\obj\Debug\ChatLogger.pdb

@@ -13,3 +13,11 @@ C:\dotNetFinancialChat_V2\CustomizeException\obj\Debug\ChatException.csproj.Core
 C:\dotNetFinancialChat_V2\CustomizeException\obj\Debug\ChatException.csproj.CopyComplete
 C:\dotNetFinancialChat_V2\CustomizeException\obj\Debug\CustomizeException.dll
 C:\dotNetFinancialChat_V2\CustomizeException\obj\Debug\CustomizeException.pdb
+C:\dotNetChat\CustomizeException\bin\Debug\CustomizeException.dll
+C:\dotNetChat\CustomizeException\bin\Debug\CustomizeException.pdb
+C:\dotNetChat\CustomizeException\bin\Debug\System.Data.SqlClient.dll
+C:\dotNetChat\CustomizeException\obj\Debug\ChatException.csprojAssemblyReference.cache
+C:\dotNetChat\CustomizeException\obj\Debug\ChatException.csproj.CoreCompileInputs.cache
+C:\dotNetChat\CustomizeException\obj\Debug\ChatException.csproj.CopyComplete
+C:\dotNetChat\CustomizeException\obj\Debug\CustomizeException.dll
+C:\dotNetChat\CustomizeException\obj\Debug\CustomizeException.pdb

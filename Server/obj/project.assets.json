@@ -4783,9 +4783,12 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "EncryptUtil": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.4",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
-          "Microsoft.EntityFrameworkCore.Tools": "2.1.4"
+          "Microsoft.EntityFrameworkCore.Tools": "2.1.4",
+          "Microsoft.Extensions.Configuration": "2.1.1",
+          "Microsoft.Extensions.Configuration.Json": "2.1.1"
         },
         "compile": {
           "bin/placeholder/Entities.dll": {}
@@ -9521,11 +9524,11 @@
       ]
     },
     "System.IO/4.3.0": {
-      "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "sha512": "v8paIePhmGuXZbE9xvvNb4uJ5ME4OFXR1+8la/G/L1GIl2nbU2WFnddgb79kVK3U2us7q1aZT/uY/R0D/ovB5g==",
       "type": "package",
       "path": "system.io/4.3.0",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9601,11 +9604,11 @@
       ]
     },
     "System.IO.Compression/4.3.0": {
-      "sha512": "YHndyoiV90iu4iKG115ibkhrG+S3jBm8Ap9OwoUAzO5oPDAWcr0SFwQFm0HjM8WkEZWo0zvLTyLmbvTkW1bXgg==",
+      "sha512": "9UDuUaO7aUHN+6rOmpc41/eYai+Udw22H0Wojst+82tXHUwHQX3InNvpZVomK3zFmbCkt47/6pGBnhhhIbRIBw==",
       "type": "package",
       "path": "system.io.compression/4.3.0",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9671,11 +9674,11 @@
       ]
     },
     "System.IO.FileSystem/4.3.0": {
-      "sha512": "3wEMARTnuio+ulnvi+hkRNROYwa1kylvYahhcLk4HSoVdl+xxTFVeVlYOfLwrDPImGls0mDqbMhrza8qnWPTdA==",
+      "sha512": "T7WB1vhblSmgkaDpdGM3Uqo55Qsr5sip5eyowrwiXOoHBkzOx3ePd9+Zh97r9NzOwFCxqX7awO6RBxQuao7n7g==",
       "type": "package",
       "path": "system.io.filesystem/4.3.0",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9708,11 +9711,11 @@
       ]
     },
     "System.IO.FileSystem.Primitives/4.3.0": {
-      "sha512": "6QOb2XFLch7bEc4lIcJH49nJN2HV+OC3fHDgsLVsBVBk3Y4hFAnOBGzJ2lUu7CyDDFo9IBWkSsnbkT6IBwwiMw==",
+      "sha512": "WIWVPQlYLP/Zc9I6IakpBk1y8ryVGK83MtZx//zGKKi2hvHQWKAB7moRQCOz5Is/wNDksiYpocf3FeA3le6e5Q==",
       "type": "package",
       "path": "system.io.filesystem.primitives/4.3.0",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11447,11 +11450,11 @@
       ]
     },
     "System.Security.Cryptography.Algorithms/4.3.0": {
-      "sha512": "W1kd2Y8mYSCgc3ULTAZ0hOP2dSdG5YauTb1089T0/kRcN2MpSAW1izOFROrJgxSlMn3ArsgHXagigyi+ibhevg==",
+      "sha512": "dkHXDCum83v0KdXZSb2kJ/B4CYwty4kk/XmyO7IsS5Vu8UI1Qi2LHMVyDLvMbP7olD1f+Hznq/DVTF6Lziql4g==",
       "type": "package",
       "path": "system.security.cryptography.algorithms/4.3.0",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11581,11 +11584,11 @@
       ]
     },
     "System.Security.Cryptography.Encoding/4.3.0": {
-      "sha512": "1DEWjZZly9ae9C79vFwqaO5kaOlI5q+3/55ohmq/7dpDyDfc8lYe7YVxJUZ5MF/NtbkRjwFRo14yM4OEo9EmDw==",
+      "sha512": "XCat0j5jVC83UG9fofcuiYDwN0PVKc2OWD0QVLjYpXn7dz+gNaANkHPbhNtr5PR8rDQNHrxtI912Hb29YAB14A==",
       "type": "package",
       "path": "system.security.cryptography.encoding/4.3.0",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11669,11 +11672,11 @@
       ]
     },
     "System.Security.Cryptography.Primitives/4.3.0": {
-      "sha512": "7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
+      "sha512": "WtgnP5mOu5zKL3vQMUPT9tV7XVYGV7Jtb0540DgBD7MMN5ojonwIcw8VybZvS6VloGmE7CRt/Hms8adBsN1DRw==",
       "type": "package",
       "path": "system.security.cryptography.primitives/4.3.0",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11737,11 +11740,11 @@
       ]
     },
     "System.Security.Cryptography.X509Certificates/4.3.0": {
-      "sha512": "t2Tmu6Y2NtJ2um0RtcuhP7ZdNNxXEgUm2JeoA/0NvlMjAhKCnM1NX07TDl3244mVp3QU6LPEhT3HTtH1uF7IYw==",
+      "sha512": "MY2Gq1Uo4rRE7D5LmCTBvoK7k9tRPqs0sjjkhviGxNdDEO2CwhEEAf5c15Dk2X9KAjoLLVwuKZUtP9AuQnNNAA==",
       "type": "package",
       "path": "system.security.cryptography.x509certificates/4.3.0",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12909,11 +12912,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dotNetFinancialChat_V2\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\dotNetChat\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\dotNetFinancialChat_V2\\Server\\Server.csproj",
+      "projectPath": "C:\\dotNetChat\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\noel.diaz\\.nuget\\packages\\",
-      "outputPath": "C:\\dotNetFinancialChat_V2\\Server\\obj\\",
+      "outputPath": "C:\\dotNetChat\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12932,23 +12935,23 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\dotNetFinancialChat_V2\\BusinessDB\\BusinessDB.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat_V2\\BusinessDB\\BusinessDB.csproj"
+            "C:\\dotNetChat\\BusinessDB\\BusinessDB.csproj": {
+              "projectPath": "C:\\dotNetChat\\BusinessDB\\BusinessDB.csproj"
             },
-            "C:\\dotNetFinancialChat_V2\\ChatLogger\\ChatLoggerUtil.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat_V2\\ChatLogger\\ChatLoggerUtil.csproj"
+            "C:\\dotNetChat\\ChatLogger\\ChatLoggerUtil.csproj": {
+              "projectPath": "C:\\dotNetChat\\ChatLogger\\ChatLoggerUtil.csproj"
             },
-            "C:\\dotNetFinancialChat_V2\\CustomizeException\\ChatException.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat_V2\\CustomizeException\\ChatException.csproj"
+            "C:\\dotNetChat\\CustomizeException\\ChatException.csproj": {
+              "projectPath": "C:\\dotNetChat\\CustomizeException\\ChatException.csproj"
             },
-            "C:\\dotNetFinancialChat_V2\\Encrypt\\EncryptUtil.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat_V2\\Encrypt\\EncryptUtil.csproj"
+            "C:\\dotNetChat\\Encrypt\\EncryptUtil.csproj": {
+              "projectPath": "C:\\dotNetChat\\Encrypt\\EncryptUtil.csproj"
             },
-            "C:\\dotNetFinancialChat_V2\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat_V2\\Entities\\Entities.csproj"
+            "C:\\dotNetChat\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\dotNetChat\\Entities\\Entities.csproj"
             },
-            "C:\\dotNetFinancialChat_V2\\RabbitManager\\RabbitManagerUtil.csproj": {
-              "projectPath": "C:\\dotNetFinancialChat_V2\\RabbitManager\\RabbitManagerUtil.csproj"
+            "C:\\dotNetChat\\RabbitManager\\RabbitManagerUtil.csproj": {
+              "projectPath": "C:\\dotNetChat\\RabbitManager\\RabbitManagerUtil.csproj"
             }
           }
         }

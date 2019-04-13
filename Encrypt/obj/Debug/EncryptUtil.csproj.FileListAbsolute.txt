@@ -22,3 +22,15 @@ C:\dotNetFinancialChat_V2\Encrypt\obj\Debug\EncryptUtil.csproj.CopyComplete
 C:\dotNetFinancialChat_V2\Encrypt\obj\Debug\Encrypt.dll
 C:\dotNetFinancialChat_V2\Encrypt\obj\Debug\Encrypt.pdb
 C:\dotNetFinancialChat_V2\Encrypt\obj\Debug\EncryptUtil.csprojAssemblyReference.cache
+C:\dotNetChat\Encrypt\bin\Debug\Encrypt.dll.config
+C:\dotNetChat\Encrypt\bin\Debug\Encrypt.dll
+C:\dotNetChat\Encrypt\bin\Debug\Encrypt.pdb
+C:\dotNetChat\Encrypt\bin\Debug\System.Data.SqlClient.dll
+C:\dotNetChat\Encrypt\bin\Debug\System.Security.AccessControl.dll
+C:\dotNetChat\Encrypt\bin\Debug\System.Security.Permissions.dll
+C:\dotNetChat\Encrypt\bin\Debug\System.Security.Principal.Windows.dll
+C:\dotNetChat\Encrypt\obj\Debug\EncryptUtil.csprojAssemblyReference.cache
+C:\dotNetChat\Encrypt\obj\Debug\EncryptUtil.csproj.CoreCompileInputs.cache
+C:\dotNetChat\Encrypt\obj\Debug\EncryptUtil.csproj.CopyComplete
+C:\dotNetChat\Encrypt\obj\Debug\Encrypt.dll
+C:\dotNetChat\Encrypt\obj\Debug\Encrypt.pdb
